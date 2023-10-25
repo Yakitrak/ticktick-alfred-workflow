@@ -1,0 +1,54 @@
+Metadata-Version: 2.1
+Name: ualfred
+Version: 2.0.1
+Summary: Modern Alfred workflow library for Python3
+Project-URL: Documentation, https://github.com/ischaojie/ualfred#readme
+Project-URL: Issues, https://github.com/ischaojie/ualfred/issues
+Project-URL: Source, https://github.com/ischaojie/ualfred
+Author-email: chaojie <hi@chaojie.fun>
+License-Expression: MIT
+License-File: LICENCE
+Keywords: alfred,alfred-workflow,python3
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Natural Language :: English
+Classifier: Operating System :: MacOS :: MacOS X
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Topic :: Software Development :: Libraries
+Classifier: Topic :: Software Development :: Libraries :: Application Frameworks
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+
+<div align="center">
+  <img src="./icon.png" alt="Alfred-Workflow logo" height="200">
+</div>
+
+ualfred
+===============
+
+Modern [Alfred](https://www.alfredapp.com/) workflow library for Python3.
+
+> **Note**
+>
+> This project is based on [deanishe/alfred-workflow](https://github.com/deanishe/alfred-workflow), and make it compatible with Python3.
+
+![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/ischaojie/ualfred/ci.yml?branch=master&style=flat-square)
+[![codecov](https://codecov.io/gh/ischaojie/ualfred/branch/master/graph/badge.svg?token=FPBE0LGDCO)](https://codecov.io/gh/ischaojie/ualfred)
+[![PyPI](https://img.shields.io/pypi/v/ualfred?style=flat-square)](https://pypi.org/project/ualfred/)
+![PyPI - Python Version](https://img.shields.io/pypi/pyversions/ualfred?style=flat-square)
+![GitHub](https://img.shields.io/github/license/ischaojie/ualfred?style=flat-square)
+
+For full usage documentation, see the origin project [docs](https://www.deanishe.net/alfred-workflow/).
+
+And don't forget to replace import statements from `workflow` to `ualfred`:
+```python
+# replace this:
+# from workflow import *
+# to
+from ualfred import *
+```
