@@ -7,7 +7,9 @@ from utils.filters import key_for_list
 
 def main(wf):
     query = wf.args[0] if len(wf.args) else None
-    lists = wf.cached_data('lists', get_lists, max_age=60)
+    token = wf.stored_data('token')
+    # lists = wf.cached_data('lists', get_lists, max_age=60, token=token)
+    lists = get_lists(token)
 
     items = wf.filter(query, lists, key_for_list) if query else lists
 

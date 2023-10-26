@@ -155,3 +155,4 @@ cython_debug/
 # others
 .idea
 .DS_Store
+prefs.plist

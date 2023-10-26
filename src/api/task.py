@@ -1,7 +1,6 @@
 from .list import get_lists
-from lib.constants import TICKTICK_API_URL, HEADERS
+from utils.constants import TICKTICK_API_URL, HEADERS
 from ualfred import web
-import multiprocessing
 
 
 def get_tasks_from_list(list_id):

@@ -34,11 +34,37 @@
 				<false/>
 			</dict>
 		</array>
+		<key>AE4738D5-CCAA-481A-880A-4CD293292B60</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>97215EF3-F4C6-44CA-804E-5738D379E759</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>C5C83A22-CD59-4373-87EC-81D194B3A359</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
 				<string>97AA7C50-EF72-4A17-A89F-CF14B5CAF919</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>F10D878A-E0A0-45AA-A448-6A10CF3848A6</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>EE082CCF-925D-4407-A404-08118419950F</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -58,6 +84,48 @@
 	<string>TickTick</string>
 	<key>objects</key>
 	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>browser</key>
+				<string></string>
+				<key>skipqueryencode</key>
+				<false/>
+				<key>skipvarencode</key>
+				<false/>
+				<key>spaces</key>
+				<string></string>
+				<key>url</key>
+				<string>https://ticktick.com/oauth/authorize?scope=tasks:write tasks:read&amp;client_id={var:client_id}&amp;redirect_uri=http://localhost&amp;response_type=code</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openurl</string>
+			<key>uid</key>
+			<string>EE082CCF-925D-4407-A404-08118419950F</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>tsetup1</string>
+				<key>subtext</key>
+				<string></string>
+				<key>text</key>
+				<string>setup 1</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>F10D878A-E0A0-45AA-A448-6A10CF3848A6</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
 		<dict>
 			<key>config</key>
 			<dict>
@@ -106,6 +174,50 @@
 			<string>07134673-1DD7-427E-B638-993B2D882394</string>
 			<key>version</key>
 			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>tsetup2</string>
+				<key>subtext</key>
+				<string></string>
+				<key>text</key>
+				<string>setup 2</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>AE4738D5-CCAA-481A-880A-4CD293292B60</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>script</key>
+				<string>python3 ./src/get-token.py $1</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>97215EF3-F4C6-44CA-804E-5738D379E759</string>
+			<key>version</key>
+			<integer>2</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -159,27 +271,6 @@
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>browser</key>
-				<string></string>
-				<key>skipqueryencode</key>
-				<false/>
-				<key>skipvarencode</key>
-				<false/>
-				<key>spaces</key>
-				<string></string>
-				<key>url</key>
-				<string>https://ticktick.com/webapp/#c/all/calendar/w</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.openurl</string>
-			<key>uid</key>
-			<string>E41C6262-AAA6-455B-ABD4-C51CC910596A</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>argumenttype</key>
 				<integer>2</integer>
 				<key>keyword</key>
@@ -195,6 +286,27 @@
 			<string>alfred.workflow.input.keyword</string>
 			<key>uid</key>
 			<string>4E9E6707-A31E-48AE-9B16-850C0C4D03F9</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>browser</key>
+				<string></string>
+				<key>skipqueryencode</key>
+				<false/>
+				<key>skipvarencode</key>
+				<false/>
+				<key>spaces</key>
+				<string></string>
+				<key>url</key>
+				<string>https://ticktick.com/webapp/#c/all/calendar/w</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openurl</string>
+			<key>uid</key>
+			<string>E41C6262-AAA6-455B-ABD4-C51CC910596A</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -284,70 +396,141 @@
 		</dict>
 	</array>
 	<key>readme</key>
-	<string></string>
+	<string>TEST</string>
 	<key>uidata</key>
 	<dict>
 		<key>07134673-1DD7-427E-B638-993B2D882394</key>
 		<dict>
 			<key>xpos</key>
-			<real>120</real>
+			<real>170</real>
 			<key>ypos</key>
-			<real>20</real>
+			<real>140</real>
 		</dict>
 		<key>19AB8A52-0342-4DA8-970D-1952CA2A7677</key>
 		<dict>
 			<key>xpos</key>
-			<real>125</real>
+			<real>175</real>
 			<key>ypos</key>
-			<real>135</real>
+			<real>255</real>
 		</dict>
 		<key>4E9E6707-A31E-48AE-9B16-850C0C4D03F9</key>
 		<dict>
 			<key>xpos</key>
-			<real>130</real>
+			<real>180</real>
 			<key>ypos</key>
-			<real>255</real>
+			<real>375</real>
 		</dict>
 		<key>61709059-2CF3-4C84-A6E3-D9877853A7F0</key>
 		<dict>
 			<key>xpos</key>
-			<real>130</real>
+			<real>180</real>
 			<key>ypos</key>
-			<real>375</real>
+			<real>495</real>
+		</dict>
+		<key>97215EF3-F4C6-44CA-804E-5738D379E759</key>
+		<dict>
+			<key>xpos</key>
+			<real>700</real>
+			<key>ypos</key>
+			<real>185</real>
 		</dict>
 		<key>97AA7C50-EF72-4A17-A89F-CF14B5CAF919</key>
 		<dict>
 			<key>xpos</key>
-			<real>295</real>
+			<real>345</real>
 			<key>ypos</key>
-			<real>495</real>
+			<real>615</real>
 		</dict>
 		<key>A78F86EA-62DA-4918-88ED-B3599F17CFB3</key>
 		<dict>
 			<key>xpos</key>
-			<real>295</real>
+			<real>345</real>
 			<key>ypos</key>
-			<real>375</real>
+			<real>495</real>
+		</dict>
+		<key>AE4738D5-CCAA-481A-880A-4CD293292B60</key>
+		<dict>
+			<key>xpos</key>
+			<real>510</real>
+			<key>ypos</key>
+			<real>185</real>
 		</dict>
 		<key>C5C83A22-CD59-4373-87EC-81D194B3A359</key>
 		<dict>
 			<key>xpos</key>
-			<real>130</real>
+			<real>180</real>
 			<key>ypos</key>
-			<real>495</real>
+			<real>615</real>
 		</dict>
 		<key>E41C6262-AAA6-455B-ABD4-C51CC910596A</key>
 		<dict>
 			<key>xpos</key>
-			<real>295</real>
+			<real>345</real>
 			<key>ypos</key>
-			<real>255</real>
+			<real>375</real>
+		</dict>
+		<key>EE082CCF-925D-4407-A404-08118419950F</key>
+		<dict>
+			<key>xpos</key>
+			<real>695</real>
+			<key>ypos</key>
+			<real>55</real>
+		</dict>
+		<key>F10D878A-E0A0-45AA-A448-6A10CF3848A6</key>
+		<dict>
+			<key>xpos</key>
+			<real>510</real>
+			<key>ypos</key>
+			<real>55</real>
 		</dict>
 	</dict>
 	<key>userconfigurationconfig</key>
-	<array/>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<string></string>
+				<key>placeholder</key>
+				<string>Your Client ID</string>
+				<key>required</key>
+				<true/>
+				<key>trim</key>
+				<true/>
+			</dict>
+			<key>description</key>
+			<string>Please follow the instructions to get this value from https://developer.ticktick.com/manage</string>
+			<key>label</key>
+			<string>Client ID</string>
+			<key>type</key>
+			<string>textfield</string>
+			<key>variable</key>
+			<string>client_id</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<string></string>
+				<key>placeholder</key>
+				<string>Your Client Secret</string>
+				<key>required</key>
+				<true/>
+				<key>trim</key>
+				<true/>
+			</dict>
+			<key>description</key>
+			<string>Please follow the instructions to get this value from https://developer.ticktick.com/manage</string>
+			<key>label</key>
+			<string>Client Secret</string>
+			<key>type</key>
+			<string>textfield</string>
+			<key>variable</key>
+			<string>client_secret</string>
+		</dict>
+	</array>
 	<key>version</key>
-	<string></string>
+	<string>0.1</string>
 	<key>webaddress</key>
 	<string>https://github.com/Yakitrak/alfred-ticktick-workflow</string>
 </dict>
