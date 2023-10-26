@@ -34,6 +34,8 @@
 				<false/>
 			</dict>
 		</array>
+		<key>97215EF3-F4C6-44CA-804E-5738D379E759</key>
+		<array/>
 		<key>AE4738D5-CCAA-481A-880A-4CD293292B60</key>
 		<array>
 			<dict>
@@ -129,6 +131,27 @@
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>browser</key>
+				<string></string>
+				<key>skipqueryencode</key>
+				<false/>
+				<key>skipvarencode</key>
+				<false/>
+				<key>spaces</key>
+				<string></string>
+				<key>url</key>
+				<string></string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openurl</string>
+			<key>uid</key>
+			<string>6E1237BA-323C-4AC3-A522-52F4A22A7C20</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>alfredfiltersresults</key>
 				<false/>
 				<key>alfredfiltersresultsmatchmode</key>
@@ -178,46 +201,23 @@
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>argumenttype</key>
-				<integer>0</integer>
-				<key>keyword</key>
-				<string>tsetup2</string>
-				<key>subtext</key>
+				<key>browser</key>
 				<string></string>
-				<key>text</key>
-				<string>setup 2</string>
-				<key>withspace</key>
-				<true/>
+				<key>skipqueryencode</key>
+				<false/>
+				<key>skipvarencode</key>
+				<false/>
+				<key>spaces</key>
+				<string></string>
+				<key>url</key>
+				<string></string>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.input.keyword</string>
+			<string>alfred.workflow.action.openurl</string>
 			<key>uid</key>
-			<string>AE4738D5-CCAA-481A-880A-4CD293292B60</string>
+			<string>A94BB0EB-3858-4E8B-8BF5-3A8662DD7428</string>
 			<key>version</key>
 			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>concurrently</key>
-				<false/>
-				<key>escaping</key>
-				<integer>102</integer>
-				<key>script</key>
-				<string>python3 ./src/get-token.py $1</string>
-				<key>scriptargtype</key>
-				<integer>1</integer>
-				<key>scriptfile</key>
-				<string></string>
-				<key>type</key>
-				<integer>0</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.script</string>
-			<key>uid</key>
-			<string>97215EF3-F4C6-44CA-804E-5738D379E759</string>
-			<key>version</key>
-			<integer>2</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -267,6 +267,50 @@
 			<string>19AB8A52-0342-4DA8-970D-1952CA2A7677</string>
 			<key>version</key>
 			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>tsetup2</string>
+				<key>subtext</key>
+				<string></string>
+				<key>text</key>
+				<string>setup 2</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>AE4738D5-CCAA-481A-880A-4CD293292B60</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>script</key>
+				<string>python3 ./src/get-token.py $1</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>97215EF3-F4C6-44CA-804E-5738D379E759</string>
+			<key>version</key>
+			<integer>2</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -404,84 +448,98 @@
 			<key>xpos</key>
 			<real>170</real>
 			<key>ypos</key>
-			<real>140</real>
+			<real>90</real>
 		</dict>
 		<key>19AB8A52-0342-4DA8-970D-1952CA2A7677</key>
 		<dict>
 			<key>xpos</key>
-			<real>175</real>
+			<real>170</real>
 			<key>ypos</key>
-			<real>255</real>
+			<real>210</real>
 		</dict>
 		<key>4E9E6707-A31E-48AE-9B16-850C0C4D03F9</key>
 		<dict>
 			<key>xpos</key>
-			<real>180</real>
+			<real>165</real>
 			<key>ypos</key>
-			<real>375</real>
+			<real>380</real>
 		</dict>
 		<key>61709059-2CF3-4C84-A6E3-D9877853A7F0</key>
 		<dict>
 			<key>xpos</key>
-			<real>180</real>
+			<real>165</real>
 			<key>ypos</key>
-			<real>495</real>
+			<real>500</real>
+		</dict>
+		<key>6E1237BA-323C-4AC3-A522-52F4A22A7C20</key>
+		<dict>
+			<key>xpos</key>
+			<real>325</real>
+			<key>ypos</key>
+			<real>90</real>
 		</dict>
 		<key>97215EF3-F4C6-44CA-804E-5738D379E759</key>
 		<dict>
 			<key>xpos</key>
-			<real>700</real>
+			<real>685</real>
 			<key>ypos</key>
-			<real>185</real>
+			<real>215</real>
 		</dict>
 		<key>97AA7C50-EF72-4A17-A89F-CF14B5CAF919</key>
 		<dict>
 			<key>xpos</key>
-			<real>345</real>
+			<real>330</real>
 			<key>ypos</key>
-			<real>615</real>
+			<real>620</real>
 		</dict>
 		<key>A78F86EA-62DA-4918-88ED-B3599F17CFB3</key>
 		<dict>
 			<key>xpos</key>
-			<real>345</real>
+			<real>330</real>
 			<key>ypos</key>
-			<real>495</real>
+			<real>500</real>
+		</dict>
+		<key>A94BB0EB-3858-4E8B-8BF5-3A8662DD7428</key>
+		<dict>
+			<key>xpos</key>
+			<real>325</real>
+			<key>ypos</key>
+			<real>210</real>
 		</dict>
 		<key>AE4738D5-CCAA-481A-880A-4CD293292B60</key>
 		<dict>
 			<key>xpos</key>
-			<real>510</real>
+			<real>495</real>
 			<key>ypos</key>
-			<real>185</real>
+			<real>215</real>
 		</dict>
 		<key>C5C83A22-CD59-4373-87EC-81D194B3A359</key>
 		<dict>
 			<key>xpos</key>
-			<real>180</real>
+			<real>165</real>
 			<key>ypos</key>
-			<real>615</real>
+			<real>620</real>
 		</dict>
 		<key>E41C6262-AAA6-455B-ABD4-C51CC910596A</key>
 		<dict>
 			<key>xpos</key>
-			<real>345</real>
+			<real>330</real>
 			<key>ypos</key>
-			<real>375</real>
+			<real>380</real>
 		</dict>
 		<key>EE082CCF-925D-4407-A404-08118419950F</key>
 		<dict>
 			<key>xpos</key>
-			<real>695</real>
+			<real>680</real>
 			<key>ypos</key>
-			<real>55</real>
+			<real>85</real>
 		</dict>
 		<key>F10D878A-E0A0-45AA-A448-6A10CF3848A6</key>
 		<dict>
 			<key>xpos</key>
-			<real>510</real>
+			<real>495</real>
 			<key>ypos</key>
-			<real>55</real>
+			<real>85</real>
 		</dict>
 	</dict>
 	<key>userconfigurationconfig</key>
