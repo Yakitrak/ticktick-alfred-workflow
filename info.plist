@@ -153,9 +153,9 @@
 				<key>keyword</key>
 				<string>tsetup1</string>
 				<key>subtext</key>
-				<string></string>
+				<string>First Step</string>
 				<key>text</key>
-				<string>setup1</string>
+				<string>TickTick Setup 1</string>
 				<key>withspace</key>
 				<false/>
 			</dict>
@@ -221,7 +221,7 @@
 				<key>scriptfile</key>
 				<string></string>
 				<key>subtext</key>
-				<string></string>
+				<string>Search and open your lists</string>
 				<key>title</key>
 				<string>TickTick List Search</string>
 				<key>type</key>
@@ -330,7 +330,7 @@ kill -9 $python_pid</string>
 				<key>scriptfile</key>
 				<string></string>
 				<key>subtext</key>
-				<string></string>
+				<string>Search and open your tasks</string>
 				<key>title</key>
 				<string>TickTick Tasks Search</string>
 				<key>type</key>
@@ -353,9 +353,9 @@ kill -9 $python_pid</string>
 				<key>keyword</key>
 				<string>tsetup2</string>
 				<key>subtext</key>
-				<string></string>
+				<string>Second and final step</string>
 				<key>text</key>
-				<string>setup 2</string>
+				<string>TickTick Step 2</string>
 				<key>withspace</key>
 				<true/>
 			</dict>
@@ -399,7 +399,7 @@ kill -9 $python_pid</string>
 				<key>subtext</key>
 				<string></string>
 				<key>text</key>
-				<string>cal week</string>
+				<string>TickTick Calendar (Week)</string>
 				<key>withspace</key>
 				<false/>
 			</dict>
@@ -441,7 +441,7 @@ kill -9 $python_pid</string>
 				<key>subtext</key>
 				<string></string>
 				<key>text</key>
-				<string>cal day</string>
+				<string>TickTick Calendar (Day)</string>
 				<key>withspace</key>
 				<false/>
 			</dict>
@@ -504,7 +504,7 @@ kill -9 $python_pid</string>
 				<key>subtext</key>
 				<string></string>
 				<key>text</key>
-				<string>cal month</string>
+				<string>TickTick Calendar (Month)</string>
 				<key>withspace</key>
 				<false/>
 			</dict>
@@ -593,7 +593,7 @@ kill -9 $python_pid</string>
 		<key>AE4738D5-CCAA-481A-880A-4CD293292B60</key>
 		<dict>
 			<key>xpos</key>
-			<real>740</real>
+			<real>745</real>
 			<key>ypos</key>
 			<real>270</real>
 		</dict>
@@ -621,9 +621,9 @@ kill -9 $python_pid</string>
 		<key>F10D878A-E0A0-45AA-A448-6A10CF3848A6</key>
 		<dict>
 			<key>xpos</key>
-			<real>715</real>
+			<real>740</real>
 			<key>ypos</key>
-			<real>40</real>
+			<real>35</real>
 		</dict>
 	</dict>
 	<key>userconfigurationconfig</key>
