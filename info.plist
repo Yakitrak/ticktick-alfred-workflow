@@ -8,6 +8,32 @@
 	<string>Productivity</string>
 	<key>connections</key>
 	<dict>
+		<key>07134673-1DD7-427E-B638-993B2D882394</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>6E1237BA-323C-4AC3-A522-52F4A22A7C20</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>19AB8A52-0342-4DA8-970D-1952CA2A7677</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>A94BB0EB-3858-4E8B-8BF5-3A8662DD7428</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>4E9E6707-A31E-48AE-9B16-850C0C4D03F9</key>
 		<array>
 			<dict>
@@ -34,6 +60,8 @@
 				<false/>
 			</dict>
 		</array>
+		<key>6E1237BA-323C-4AC3-A522-52F4A22A7C20</key>
+		<array/>
 		<key>97215EF3-F4C6-44CA-804E-5738D379E759</key>
 		<array/>
 		<key>AE4738D5-CCAA-481A-880A-4CD293292B60</key>
@@ -74,6 +102,16 @@
 				<key>vitoclose</key>
 				<false/>
 			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>2CD807E7-D199-4485-A978-7D9496898E3A</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
 		</array>
 	</dict>
 	<key>createdby</key>
@@ -98,7 +136,7 @@
 				<key>spaces</key>
 				<string></string>
 				<key>url</key>
-				<string>https://ticktick.com/oauth/authorize?scope=tasks:write tasks:read&amp;client_id={var:client_id}&amp;redirect_uri=http://localhost&amp;response_type=code</string>
+				<string>https://ticktick.com/oauth/authorize?scope=tasks:write tasks:read&amp;client_id={var:client_id}&amp;redirect_uri=http://localhost:8080&amp;response_type=code</string>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.action.openurl</string>
@@ -117,7 +155,7 @@
 				<key>subtext</key>
 				<string></string>
 				<key>text</key>
-				<string>setup 1</string>
+				<string>setup1</string>
 				<key>withspace</key>
 				<false/>
 			</dict>
@@ -140,7 +178,7 @@
 				<key>spaces</key>
 				<string></string>
 				<key>url</key>
-				<string></string>
+				<string>https://ticktick.com/webapp/#p/{query}/tasks</string>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.action.openurl</string>
@@ -157,7 +195,7 @@
 				<key>alfredfiltersresultsmatchmode</key>
 				<integer>0</integer>
 				<key>argumenttreatemptyqueryasnil</key>
-				<true/>
+				<false/>
 				<key>argumenttrimmode</key>
 				<integer>0</integer>
 				<key>argumenttype</key>
@@ -175,7 +213,7 @@
 				<key>queuemode</key>
 				<integer>1</integer>
 				<key>runningsubtext</key>
-				<string></string>
+				<string>Searching lists..</string>
 				<key>script</key>
 				<string>python3 ./src/get-lists.py $1</string>
 				<key>scriptargtype</key>
@@ -185,7 +223,7 @@
 				<key>subtext</key>
 				<string></string>
 				<key>title</key>
-				<string></string>
+				<string>TickTick List Search</string>
 				<key>type</key>
 				<integer>0</integer>
 				<key>withspace</key>
@@ -201,6 +239,45 @@
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>script</key>
+				<string>port=8080
+
+# Check if something is already running on port 8080
+if lsof -i :$port &gt;/dev/null 2&gt;&amp;1; then
+  echo "A process is already using port $port. Killing it..."
+  lsof -ti :$port | xargs kill -9
+fi
+
+
+python3 ./src/get-code-server.py &amp;
+
+script_pid=$!
+
+sleep 120
+
+# Kill the Python process after 2 minutes
+kill -9 $python_pid</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>2CD807E7-D199-4485-A978-7D9496898E3A</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>browser</key>
 				<string></string>
 				<key>skipqueryencode</key>
@@ -210,7 +287,7 @@
 				<key>spaces</key>
 				<string></string>
 				<key>url</key>
-				<string></string>
+				<string>https://ticktick.com/webapp/#p/{query}</string>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.action.openurl</string>
@@ -245,7 +322,7 @@
 				<key>queuemode</key>
 				<integer>1</integer>
 				<key>runningsubtext</key>
-				<string></string>
+				<string>Searching tasks..</string>
 				<key>script</key>
 				<string>python3 ./src/get-tasks.py $1</string>
 				<key>scriptargtype</key>
@@ -255,7 +332,7 @@
 				<key>subtext</key>
 				<string></string>
 				<key>title</key>
-				<string></string>
+				<string>TickTick Tasks Search</string>
 				<key>type</key>
 				<integer>0</integer>
 				<key>withspace</key>
@@ -446,16 +523,23 @@
 		<key>07134673-1DD7-427E-B638-993B2D882394</key>
 		<dict>
 			<key>xpos</key>
-			<real>170</real>
+			<real>155</real>
 			<key>ypos</key>
-			<real>90</real>
+			<real>55</real>
 		</dict>
 		<key>19AB8A52-0342-4DA8-970D-1952CA2A7677</key>
 		<dict>
 			<key>xpos</key>
-			<real>170</real>
+			<real>160</real>
 			<key>ypos</key>
-			<real>210</real>
+			<real>195</real>
+		</dict>
+		<key>2CD807E7-D199-4485-A978-7D9496898E3A</key>
+		<dict>
+			<key>xpos</key>
+			<real>895</real>
+			<key>ypos</key>
+			<real>145</real>
 		</dict>
 		<key>4E9E6707-A31E-48AE-9B16-850C0C4D03F9</key>
 		<dict>
@@ -474,16 +558,16 @@
 		<key>6E1237BA-323C-4AC3-A522-52F4A22A7C20</key>
 		<dict>
 			<key>xpos</key>
-			<real>325</real>
+			<real>425</real>
 			<key>ypos</key>
-			<real>90</real>
+			<real>45</real>
 		</dict>
 		<key>97215EF3-F4C6-44CA-804E-5738D379E759</key>
 		<dict>
 			<key>xpos</key>
-			<real>685</real>
+			<real>895</real>
 			<key>ypos</key>
-			<real>215</real>
+			<real>270</real>
 		</dict>
 		<key>97AA7C50-EF72-4A17-A89F-CF14B5CAF919</key>
 		<dict>
@@ -502,21 +586,21 @@
 		<key>A94BB0EB-3858-4E8B-8BF5-3A8662DD7428</key>
 		<dict>
 			<key>xpos</key>
-			<real>325</real>
+			<real>315</real>
 			<key>ypos</key>
-			<real>210</real>
+			<real>190</real>
 		</dict>
 		<key>AE4738D5-CCAA-481A-880A-4CD293292B60</key>
 		<dict>
 			<key>xpos</key>
-			<real>495</real>
+			<real>740</real>
 			<key>ypos</key>
-			<real>215</real>
+			<real>270</real>
 		</dict>
 		<key>C5C83A22-CD59-4373-87EC-81D194B3A359</key>
 		<dict>
 			<key>xpos</key>
-			<real>165</real>
+			<real>160</real>
 			<key>ypos</key>
 			<real>620</real>
 		</dict>
@@ -530,16 +614,16 @@
 		<key>EE082CCF-925D-4407-A404-08118419950F</key>
 		<dict>
 			<key>xpos</key>
-			<real>680</real>
+			<real>890</real>
 			<key>ypos</key>
-			<real>85</real>
+			<real>30</real>
 		</dict>
 		<key>F10D878A-E0A0-45AA-A448-6A10CF3848A6</key>
 		<dict>
 			<key>xpos</key>
-			<real>495</real>
+			<real>715</real>
 			<key>ypos</key>
-			<real>85</real>
+			<real>40</real>
 		</dict>
 	</dict>
 	<key>userconfigurationconfig</key>

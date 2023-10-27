@@ -14,7 +14,7 @@ def main(wf):
         wf.add_item('No tasks match your query', icon=ICON_WARNING)
 
     for item in items:
-        wf.add_item(item['title'], subtitle=item['id'], arg=item['id'])
+        wf.add_item(item['title'], subtitle=item['id'], arg=item['id'], valid=True)
 
 
     wf.send_feedback()

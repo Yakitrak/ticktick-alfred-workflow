@@ -16,7 +16,7 @@ def main(wf):
         wf.add_item('No lists match your query', icon=ICON_WARNING)
 
     for item in items:
-        wf.add_item(item['name'], subtitle=item['id'], arg=item['id'])
+        wf.add_item(item['name'], subtitle=item['id'], arg=item['id'], valid=True)
 
     wf.send_feedback()
 
