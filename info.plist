@@ -63,7 +63,18 @@
 		<key>6E1237BA-323C-4AC3-A522-52F4A22A7C20</key>
 		<array/>
 		<key>97215EF3-F4C6-44CA-804E-5738D379E759</key>
-		<array/>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>E4667CFD-E90D-41AB-8548-C2B353B4E48F</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>AE4738D5-CCAA-481A-880A-4CD293292B60</key>
 		<array>
 			<dict>
@@ -102,16 +113,6 @@
 				<key>vitoclose</key>
 				<false/>
 			</dict>
-			<dict>
-				<key>destinationuid</key>
-				<string>2CD807E7-D199-4485-A978-7D9496898E3A</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
 		</array>
 	</dict>
 	<key>createdby</key>
@@ -136,33 +137,12 @@
 				<key>spaces</key>
 				<string></string>
 				<key>url</key>
-				<string>https://ticktick.com/oauth/authorize?scope=tasks:write tasks:read&amp;client_id={var:client_id}&amp;redirect_uri=http://localhost:8080&amp;response_type=code</string>
+				<string>https://ticktick.com/oauth/authorize?scope=tasks:write tasks:read&amp;client_id={var:client_id}&amp;redirect_uri=http://localhost&amp;response_type=code</string>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.action.openurl</string>
 			<key>uid</key>
 			<string>EE082CCF-925D-4407-A404-08118419950F</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>argumenttype</key>
-				<integer>2</integer>
-				<key>keyword</key>
-				<string>tsetup1</string>
-				<key>subtext</key>
-				<string>First Step</string>
-				<key>text</key>
-				<string>TickTick Setup 1</string>
-				<key>withspace</key>
-				<false/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.input.keyword</string>
-			<key>uid</key>
-			<string>F10D878A-E0A0-45AA-A448-6A10CF3848A6</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -184,6 +164,27 @@
 			<string>alfred.workflow.action.openurl</string>
 			<key>uid</key>
 			<string>6E1237BA-323C-4AC3-A522-52F4A22A7C20</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>tsetup1</string>
+				<key>subtext</key>
+				<string>Run this after configuring your Client Id and Secret</string>
+				<key>text</key>
+				<string>TickTick Setup 1</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>F10D878A-E0A0-45AA-A448-6A10CF3848A6</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -244,23 +245,7 @@
 				<key>escaping</key>
 				<integer>102</integer>
 				<key>script</key>
-				<string>port=8080
-
-# Check if something is already running on port 8080
-if lsof -i :$port &gt;/dev/null 2&gt;&amp;1; then
-  echo "A process is already using port $port. Killing it..."
-  lsof -ti :$port | xargs kill -9
-fi
-
-
-python3 ./src/get-code-server.py &amp;
-
-script_pid=$!
-
-sleep 120
-
-# Kill the Python process after 2 minutes
-kill -9 $python_pid</string>
+				<string>python3 ./src/get-token.py $1</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
@@ -271,9 +256,51 @@ kill -9 $python_pid</string>
 			<key>type</key>
 			<string>alfred.workflow.action.script</string>
 			<key>uid</key>
-			<string>2CD807E7-D199-4485-A978-7D9496898E3A</string>
+			<string>97215EF3-F4C6-44CA-804E-5738D379E759</string>
 			<key>version</key>
 			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>tsetup2</string>
+				<key>subtext</key>
+				<string>Paste the "code" from step 1</string>
+				<key>text</key>
+				<string>TickTick Setup 2</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>AE4738D5-CCAA-481A-880A-4CD293292B60</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<true/>
+				<key>removeextension</key>
+				<false/>
+				<key>text</key>
+				<string>TickTick Alfred Workflow</string>
+				<key>title</key>
+				<string>{query}</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>E4667CFD-E90D-41AB-8548-C2B353B4E48F</string>
+			<key>version</key>
+			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -344,50 +371,6 @@ kill -9 $python_pid</string>
 			<string>19AB8A52-0342-4DA8-970D-1952CA2A7677</string>
 			<key>version</key>
 			<integer>3</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>argumenttype</key>
-				<integer>0</integer>
-				<key>keyword</key>
-				<string>tsetup2</string>
-				<key>subtext</key>
-				<string>Second and final step</string>
-				<key>text</key>
-				<string>TickTick Step 2</string>
-				<key>withspace</key>
-				<true/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.input.keyword</string>
-			<key>uid</key>
-			<string>AE4738D5-CCAA-481A-880A-4CD293292B60</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>concurrently</key>
-				<false/>
-				<key>escaping</key>
-				<integer>102</integer>
-				<key>script</key>
-				<string>python3 ./src/get-token.py $1</string>
-				<key>scriptargtype</key>
-				<integer>1</integer>
-				<key>scriptfile</key>
-				<string></string>
-				<key>type</key>
-				<integer>0</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.script</string>
-			<key>uid</key>
-			<string>97215EF3-F4C6-44CA-804E-5738D379E759</string>
-			<key>version</key>
-			<integer>2</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -517,7 +500,32 @@ kill -9 $python_pid</string>
 		</dict>
 	</array>
 	<key>readme</key>
-	<string>TEST</string>
+	<string>## Setup
+1. Go to `https://developer.ticktick.com/manage` and 
+create a new app with any name you want. You'll be asked for a redirect url, pleae enter in `http://localhost`.
+2. Go to "Configure Workflow" button on this workflow on Alfred, and copy and paste the "Client ID" and "Client Secret"
+3. Using Alfred, type in `tsetup1` and authorise the workflow, you'll be redirected to 
+`http://localhost?code=xxxxx`.
+4. Lastly, type in `tsetup2` followed by the code from the step 1. You are now ready to use the workflow!
+
+## Usage
+### Lists
+`tls &lt;query&gt;` - Search for a list in TickTick. Pressing enter will open the list in TickTick.
+
+`tla &lt;query&gt;` - Create a new list in TickTick. Pressing enter will open the list in TickTick.
+
+### Tasks
+`tts &lt;query&gt;` - Search for a task in TickTick. Pressing enter will open the task in TickTick.
+- You can also press `cmd + enter` to complete the task.
+- You can use `@today` or `@tomorrow` to search for tasks due today or tomorrow respectively.
+
+`tta &lt;query&gt;` - Add a new task to TickTick`. Pressing enter will only add the test, but pressing `cmd + enter` will
+open the task in TickTick.
+
+### Calendar
+`tcd` - Open the calendar in TickTick, in the day view.
+`tcw` - Open the calendar in TickTick, in the week view.
+`tcm` - Open the calendar in TickTick, in the month view.</string>
 	<key>uidata</key>
 	<dict>
 		<key>07134673-1DD7-427E-B638-993B2D882394</key>
@@ -525,21 +533,14 @@ kill -9 $python_pid</string>
 			<key>xpos</key>
 			<real>155</real>
 			<key>ypos</key>
-			<real>55</real>
+			<real>35</real>
 		</dict>
 		<key>19AB8A52-0342-4DA8-970D-1952CA2A7677</key>
 		<dict>
 			<key>xpos</key>
 			<real>160</real>
 			<key>ypos</key>
-			<real>195</real>
-		</dict>
-		<key>2CD807E7-D199-4485-A978-7D9496898E3A</key>
-		<dict>
-			<key>xpos</key>
-			<real>895</real>
-			<key>ypos</key>
-			<real>145</real>
+			<real>215</real>
 		</dict>
 		<key>4E9E6707-A31E-48AE-9B16-850C0C4D03F9</key>
 		<dict>
@@ -558,16 +559,16 @@ kill -9 $python_pid</string>
 		<key>6E1237BA-323C-4AC3-A522-52F4A22A7C20</key>
 		<dict>
 			<key>xpos</key>
-			<real>425</real>
+			<real>320</real>
 			<key>ypos</key>
-			<real>45</real>
+			<real>35</real>
 		</dict>
 		<key>97215EF3-F4C6-44CA-804E-5738D379E759</key>
 		<dict>
 			<key>xpos</key>
-			<real>895</real>
+			<real>770</real>
 			<key>ypos</key>
-			<real>270</real>
+			<real>165</real>
 		</dict>
 		<key>97AA7C50-EF72-4A17-A89F-CF14B5CAF919</key>
 		<dict>
@@ -586,16 +587,16 @@ kill -9 $python_pid</string>
 		<key>A94BB0EB-3858-4E8B-8BF5-3A8662DD7428</key>
 		<dict>
 			<key>xpos</key>
-			<real>315</real>
+			<real>325</real>
 			<key>ypos</key>
-			<real>190</real>
+			<real>210</real>
 		</dict>
 		<key>AE4738D5-CCAA-481A-880A-4CD293292B60</key>
 		<dict>
 			<key>xpos</key>
-			<real>745</real>
+			<real>620</real>
 			<key>ypos</key>
-			<real>270</real>
+			<real>170</real>
 		</dict>
 		<key>C5C83A22-CD59-4373-87EC-81D194B3A359</key>
 		<dict>
@@ -611,17 +612,24 @@ kill -9 $python_pid</string>
 			<key>ypos</key>
 			<real>380</real>
 		</dict>
+		<key>E4667CFD-E90D-41AB-8548-C2B353B4E48F</key>
+		<dict>
+			<key>xpos</key>
+			<real>925</real>
+			<key>ypos</key>
+			<real>170</real>
+		</dict>
 		<key>EE082CCF-925D-4407-A404-08118419950F</key>
 		<dict>
 			<key>xpos</key>
-			<real>890</real>
+			<real>900</real>
 			<key>ypos</key>
-			<real>30</real>
+			<real>35</real>
 		</dict>
 		<key>F10D878A-E0A0-45AA-A448-6A10CF3848A6</key>
 		<dict>
 			<key>xpos</key>
-			<real>740</real>
+			<real>720</real>
 			<key>ypos</key>
 			<real>35</real>
 		</dict>
