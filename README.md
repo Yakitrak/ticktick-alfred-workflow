@@ -10,12 +10,12 @@ Or you can build it yourself by cloning this repo into your Alfred workflows dir
 you will need to have the [Alfred Powerpack](https://www.alfredapp.com/powerpack/) installed and python3 installed.
 
 ## Setup
-1. Go to `https://developer.ticktick.com/manage` and 
+1. Go to [https://developer.ticktick.com/manage](https://developer.ticktick.com/manage) and 
 create a new app with any name you want. You'll be asked for a redirect url, pleae enter in `http://localhost`.
 2. Go to "Configure Workflow" button on this workflow on Alfred, and copy and paste the "Client ID" and "Client Secret"
 3. Using Alfred, type in `tsetup1` and authorise the workflow, you'll be redirected to 
 `http://localhost?code=xxxxx`.
-4. Lastly, type in `tsetup2` followed by the code from the step 1. You are now ready to use the workflow!
+4. Using Alred, type in `tsetup2` followed by the code from the step 1. You are now ready to use the workflow!
 
 ## Usage
 ### Lists
@@ -25,6 +25,7 @@ create a new app with any name you want. You'll be asked for a redirect url, ple
 
 ### Tasks
 `tts <query>` - Search for a task in TickTick. Pressing enter will open the task in TickTick.
+- You can search by task name, list name, or "@today / @tod" or "@tomorrow / @tom" to search for tasks due today or tomorrow respectively.
 - You can also press `cmd + enter` to complete the task.
 - You can use `@today` or `@tomorrow` to search for tasks due today or tomorrow respectively.
 
