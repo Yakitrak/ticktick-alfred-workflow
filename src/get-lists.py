@@ -1,5 +1,3 @@
-#!/usr/bin/env python3
-
 import sys
 from ualfred import Workflow, ICON_WARNING
 from api.list import get_lists
@@ -16,7 +14,8 @@ def main(wf):
         wf.add_item('No lists match your query', icon=ICON_WARNING)
 
     for item in items:
-        wf.add_item(item['name'], subtitle='Please enter to open in TickTick', arg=item['id'], valid=True)
+        subtitle = item['kind'].title() + ' List'
+        wf.add_item(item['name'], subtitle=subtitle, arg=item['id'], valid=True)
 
     wf.send_feedback()
 

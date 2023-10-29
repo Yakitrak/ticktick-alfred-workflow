@@ -24,12 +24,12 @@ create a new app with any name you want. You'll be asked for a redirect url, ple
 `tla <query>` - Create a new list in TickTick. Pressing enter will open the list in TickTick.
 
 ### Tasks
-`tts <query>` - Search for a task in TickTick. Pressing enter will open the task in TickTick.
+`tts <query>` - Search for a task in TickTick. 
 - You can search by task name, list name, or "@today / @tod" or "@tomorrow / @tom" to search for tasks due today or tomorrow respectively.
-- You can also press `cmd + enter` to complete the task.
+- Pressing enter will open the task in TickTick. You can also press `cmd + enter` to complete the task.
 - You can use `@today` or `@tomorrow` to search for tasks due today or tomorrow respectively.
 
-`tta <query>` - Add a new task to TickTick`. Pressing enter will only add the test, but pressing `cmd + enter` will
+`ttn <query>` - Add a new task to TickTick`. Pressing enter will only add the test, but pressing `cmd + enter` will
 open the task in TickTick.
 
 ### Calendar
