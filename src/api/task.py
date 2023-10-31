@@ -34,3 +34,11 @@ def complete_task(token, arg):
 
 def create_task(token, task_name, due_date=None):
     headers = {"Authorization": "Bearer " + token}
+    url = TICKTICK_API_URL + '/task'
+    data = {
+        'title': task_name,
+        'dueDate': due_date,
+    }
+    print(data)
+    # return requests.post(url, headers=headers, json=data)
+

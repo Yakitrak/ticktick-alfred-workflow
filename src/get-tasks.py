@@ -1,7 +1,7 @@
 import sys
 from ualfred import Workflow, ICON_WARNING
 from api.task import get_all_tasks
-from utils.filters import is_today, is_tomorrow, key_for_task
+from utils.filters import is_today, is_tomorrow, key_for_task, is_this_week, sort_by_due_date
 from utils.displays import generate_task_display
 import asyncio
 
@@ -25,8 +25,12 @@ async def main(wf):
         items = list(filter(is_today, tasks))
     elif query == '@tomorrow' or query == '@tom':
         items = list(filter(is_tomorrow, tasks))
+    elif query == '@thisweek' or query == '@tw':
+        items = list(filter(is_this_week, tasks))
     else:
         items = wf.filter(query, tasks, key_for_task)
+
+    items = sorted(items, key=sort_by_due_date)
 
     if not items:
         wf.add_item('No tasks match your query', icon=ICON_WARNING)

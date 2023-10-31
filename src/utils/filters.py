@@ -12,3 +12,11 @@ def is_today(ttTask):
 def is_tomorrow(ttTask):
     dtime = datetime.strptime(ttTask['dueDate'], '%Y-%m-%dT%H:%M:%S.%f%z')
     return dtime.date() == datetime.now().date() + timedelta(days=1)
+
+def is_this_week(ttTask):
+    dtime = datetime.strptime(ttTask['dueDate'], '%Y-%m-%dT%H:%M:%S.%f%z')
+    return dtime.date() >= datetime.now().date() and dtime.date() <= datetime.now().date() + timedelta(days=7)
+
+def sort_by_due_date(ttTask):
+    dtime = datetime.strptime(ttTask['dueDate'], '%Y-%m-%dT%H:%M:%S.%f%z')
+    return dtime.timestamp()
