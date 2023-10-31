@@ -1,25 +1,18 @@
 from datetime import datetime, timedelta
 def generate_task_display(item):
     title = item['title']
-    subtitle = item['list_name'] + ' | ' + generate_date_times(item['startDate'], item['dueDate'])
+    subtitle = item['list_name'] + ' | ' + generate_date_times(item)
     return title, subtitle
 
-def generate_date_times(due_date, start_date):
-    due_date = generate_pretty_date_time(due_date)
-    start_date = generate_pretty_date_time(start_date)
-    if due_date == start_date:
-        return due_date
-    else:
-        return start_date + ' - ' + due_date
-
-def generate_pretty_date_time(dtime):
+def generate_date_times(item):
+    dtime = item.get('dueDate')
+    if not dtime:
+        return 'No Due Date'
     dtime = datetime.strptime(dtime, '%Y-%m-%dT%H:%M:%S.%f%z')
     date = generate_pretty_date(dtime)
     time = generate_pretty_time(dtime)
-    if time:
-        return date + ' ' + time
-    else:
-        return date
+    return date + (' ' + time if time else '')
+
 def generate_pretty_date(date):
     now = datetime.now()
     if date.date() == now.date():

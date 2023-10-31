@@ -21,7 +21,7 @@ create a new app with any name you want. You'll be asked for a redirect url, ple
 ### Lists
 `tls <query>` - Search for a list in TickTick. Pressing enter will open the list in TickTick.
 
-`tla <query>` - Create a new list in TickTick. Pressing enter will open the list in TickTick.
+`tln <query>` - Create a new list in TickTick. Pressing enter will open the list in TickTick.
 
 ### Tasks
 `tts <query>` - Search for a task in TickTick. 
