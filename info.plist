@@ -44,8 +44,32 @@
 				<false/>
 			</dict>
 		</array>
+		<key>1C752214-A9F6-4AAB-8714-092E72359AD6</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>974FB3E7-29DA-4C3C-A73B-C0472916D337</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>1E10B0D4-D932-4A5B-A760-0AC803804A5F</key>
-		<array/>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>1C752214-A9F6-4AAB-8714-092E72359AD6</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>4E9E6707-A31E-48AE-9B16-850C0C4D03F9</key>
 		<array>
 			<dict>
@@ -591,16 +615,60 @@
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>argumenttype</key>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<true/>
+				<key>removeextension</key>
+				<false/>
+				<key>text</key>
+				<string>TickTick Alfred Workflow</string>
+				<key>title</key>
+				<string>{query}</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>974FB3E7-29DA-4C3C-A73B-C0472916D337</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>script</key>
+				<string>python3 ./src/clear-cache.py</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
 				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>1C752214-A9F6-4AAB-8714-092E72359AD6</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
 				<key>keyword</key>
 				<string>tclear</string>
 				<key>subtext</key>
-				<string></string>
+				<string>Clears requests cache (does not remove authorisation)</string>
 				<key>text</key>
-				<string></string>
+				<string>TickTick Clear Cache</string>
 				<key>withspace</key>
-				<true/>
+				<false/>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.input.keyword</string>
@@ -674,6 +742,13 @@ open the task in TickTick.
 			<key>ypos</key>
 			<real>550</real>
 		</dict>
+		<key>1C752214-A9F6-4AAB-8714-092E72359AD6</key>
+		<dict>
+			<key>xpos</key>
+			<real>850</real>
+			<key>ypos</key>
+			<real>715</real>
+		</dict>
 		<key>1E10B0D4-D932-4A5B-A760-0AC803804A5F</key>
 		<dict>
 			<key>xpos</key>
@@ -729,6 +804,13 @@ open the task in TickTick.
 			<real>770</real>
 			<key>ypos</key>
 			<real>165</real>
+		</dict>
+		<key>974FB3E7-29DA-4C3C-A73B-C0472916D337</key>
+		<dict>
+			<key>xpos</key>
+			<real>1005</real>
+			<key>ypos</key>
+			<real>710</real>
 		</dict>
 		<key>97AA7C50-EF72-4A17-A89F-CF14B5CAF919</key>
 		<dict>
