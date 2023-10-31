@@ -1,16 +1,16 @@
 import sys
 from ualfred import Workflow
-from api.task import complete_task
+from api.list import create_list
 
 def main(wf):
-    query = wf.args[0] if len(wf.args) else None
+    list_name = wf.args[0]
     token = wf.stored_data('access_token')
-    r = complete_task(query, token)
+    r = create_list(list_name, token)
     if r.status_code != 200:
-        print("Task completion failed. Please try again.")
+        print("List could not be created. Please try again.")
     else:
         wf.clear_cache()
-        print("Task completed.")
+        print('{} list created.'.format(list_name))
 
 
 if __name__ == u"__main__":

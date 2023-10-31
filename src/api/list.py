@@ -1,9 +1,20 @@
 from utils.constants import TICKTICK_API_URL
-from ualfred import web
-
+import requests
 def get_lists(token):
     headers = {
         "Authorization": "Bearer " + token,
     }
     url = TICKTICK_API_URL + '/project'
-    return web.get(url, headers=headers).json()
+    return requests.get(url, headers=headers).json()
+
+
+def create_list(list_name, token):
+    headers = {
+        "Authorization": "Bearer " + token,
+    }
+    data = {
+        "name": list_name,
+    }
+    url = TICKTICK_API_URL + '/project'
+    return requests.post(url, headers=headers, json=data)
+

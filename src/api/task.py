@@ -1,13 +1,12 @@
 from concurrent.futures import ThreadPoolExecutor
 from .list import get_lists
 from utils.constants import TICKTICK_API_URL
-from ualfred import web
 import requests
 
 def get_tasks_from_list(list_id, token):
     headers = {"Authorization": "Bearer " + token}
     url = TICKTICK_API_URL + '/project/' + list_id + '/data'
-    resp = web.get(url, headers=headers).json()
+    resp = requests.get(url, headers=headers).json()
     tasks = []
     list_name = resp['project']['name']
     for task in resp['tasks']:
@@ -29,7 +28,7 @@ def get_all_tasks(token):
     return tasks
 
 # previous script filter will output "list_id/tasks/task_id" as arg, but we need "list_id/tasks/task_id"
-def complete_task(token, arg):
+def complete_task(arg, token):
     path = arg.replace('tasks', 'task')
     headers = {"Authorization": "Bearer " + token}
     url = TICKTICK_API_URL + '/project/' + path + '/complete'
