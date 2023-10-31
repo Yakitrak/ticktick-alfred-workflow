@@ -8,7 +8,7 @@ def get_lists(token):
     return requests.get(url, headers=headers).json()
 
 
-def create_list(list_name, token):
+def create_list(token, list_name):
     headers = {
         "Authorization": "Bearer " + token,
     }

@@ -124,6 +124,19 @@
 				<false/>
 			</dict>
 		</array>
+		<key>8D7DEC1E-97D9-44A7-B140-3070763C3AAF</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>F62B208F-4DE7-480F-867A-E20F71CC19D2</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>926C6951-E18D-48B3-85D8-0714ED3249D2</key>
 		<array>
 			<dict>
@@ -155,6 +168,19 @@
 			<dict>
 				<key>destinationuid</key>
 				<string>97215EF3-F4C6-44CA-804E-5738D379E759</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>B2507937-281B-4488-8C9C-87AE2BC74D00</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>8D7DEC1E-97D9-44A7-B140-3070763C3AAF</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -599,6 +625,50 @@
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<true/>
+				<key>removeextension</key>
+				<false/>
+				<key>text</key>
+				<string>TickTick Alfred Workflow</string>
+				<key>title</key>
+				<string>{query}</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>D7B14153-6DC0-47D6-9689-0399D2B52806</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>script</key>
+				<string>python3 ./src/complete-task.py $1</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>7129FA9C-A39D-46EB-9193-18E5AD9CC7C0</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>browser</key>
 				<string></string>
 				<key>skipqueryencode</key>
@@ -641,6 +711,50 @@
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>script</key>
+				<string>python3 ./src/new-task.py $1</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>8D7DEC1E-97D9-44A7-B140-3070763C3AAF</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>ttn</string>
+				<key>subtext</key>
+				<string>Creates new task with your specificed name</string>
+				<key>text</key>
+				<string>TickTick Task New</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>B2507937-281B-4488-8C9C-87AE2BC74D00</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>lastpathcomponent</key>
 				<false/>
 				<key>onlyshowifquerypopulated</key>
@@ -655,32 +769,9 @@
 			<key>type</key>
 			<string>alfred.workflow.output.notification</string>
 			<key>uid</key>
-			<string>D7B14153-6DC0-47D6-9689-0399D2B52806</string>
+			<string>F62B208F-4DE7-480F-867A-E20F71CC19D2</string>
 			<key>version</key>
 			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>concurrently</key>
-				<false/>
-				<key>escaping</key>
-				<integer>102</integer>
-				<key>script</key>
-				<string>python3 ./src/complete-task.py $1</string>
-				<key>scriptargtype</key>
-				<integer>1</integer>
-				<key>scriptfile</key>
-				<string></string>
-				<key>type</key>
-				<integer>0</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.script</string>
-			<key>uid</key>
-			<string>7129FA9C-A39D-46EB-9193-18E5AD9CC7C0</string>
-			<key>version</key>
-			<integer>2</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -789,7 +880,7 @@ open the task in TickTick.
 			<key>xpos</key>
 			<real>30</real>
 			<key>ypos</key>
-			<real>435</real>
+			<real>410</real>
 		</dict>
 		<key>1C752214-A9F6-4AAB-8714-092E72359AD6</key>
 		<dict>
@@ -838,7 +929,14 @@ open the task in TickTick.
 			<key>xpos</key>
 			<real>235</real>
 			<key>ypos</key>
-			<real>580</real>
+			<real>560</real>
+		</dict>
+		<key>8D7DEC1E-97D9-44A7-B140-3070763C3AAF</key>
+		<dict>
+			<key>xpos</key>
+			<real>245</real>
+			<key>ypos</key>
+			<real>700</real>
 		</dict>
 		<key>8E6B4CB7-EFFD-49BB-9431-0FC323586DAE</key>
 		<dict>
@@ -887,7 +985,7 @@ open the task in TickTick.
 			<key>xpos</key>
 			<real>215</real>
 			<key>ypos</key>
-			<real>425</real>
+			<real>405</real>
 		</dict>
 		<key>AE4738D5-CCAA-481A-880A-4CD293292B60</key>
 		<dict>
@@ -895,6 +993,13 @@ open the task in TickTick.
 			<real>620</real>
 			<key>ypos</key>
 			<real>170</real>
+		</dict>
+		<key>B2507937-281B-4488-8C9C-87AE2BC74D00</key>
+		<dict>
+			<key>xpos</key>
+			<real>60</real>
+			<key>ypos</key>
+			<real>700</real>
 		</dict>
 		<key>C5C83A22-CD59-4373-87EC-81D194B3A359</key>
 		<dict>
@@ -908,7 +1013,7 @@ open the task in TickTick.
 			<key>xpos</key>
 			<real>420</real>
 			<key>ypos</key>
-			<real>580</real>
+			<real>560</real>
 		</dict>
 		<key>E41C6262-AAA6-455B-ABD4-C51CC910596A</key>
 		<dict>
@@ -937,6 +1042,13 @@ open the task in TickTick.
 			<real>720</real>
 			<key>ypos</key>
 			<real>35</real>
+		</dict>
+		<key>F62B208F-4DE7-480F-867A-E20F71CC19D2</key>
+		<dict>
+			<key>xpos</key>
+			<real>405</real>
+			<key>ypos</key>
+			<real>705</real>
 		</dict>
 	</dict>
 	<key>userconfigurationconfig</key>
