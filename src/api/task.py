@@ -2,8 +2,9 @@ from concurrent.futures import ThreadPoolExecutor
 from .list import get_lists
 from utils.constants import TICKTICK_API_URL
 import requests
+import asyncio
 
-def get_tasks_from_list(token, list_id):
+async def get_tasks_from_list(token, list_id):
     headers = {"Authorization": "Bearer " + token}
     url = TICKTICK_API_URL + '/project/' + list_id + '/data'
     resp = requests.get(url, headers=headers).json()
@@ -15,16 +16,13 @@ def get_tasks_from_list(token, list_id):
         tasks.append(task)
     return tasks
 
-def get_all_tasks(token):
-    print(token)
+async def get_all_tasks(token):
     lists = get_lists(token)
     list_ids = [l['id'] for l in lists]
     tasks = []
-    with ThreadPoolExecutor(5) as executor:
-        futures = [executor.submit(get_tasks_from_list, token, list_id) for list_id in list_ids]
-        for future in futures:
-            result = future.result()
-            tasks.extend(result)
+    tasks_data = await asyncio.gather(*[get_tasks_from_list(token, list_id) for list_id in list_ids])
+    for data in tasks_data:
+        tasks.extend(data)
     return tasks
 
 # previous script filter will output "list_id/tasks/task_id" as arg, but we need "list_id/tasks/task_id"

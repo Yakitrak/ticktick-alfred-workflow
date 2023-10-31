@@ -9,7 +9,7 @@ def main(wf):
     if r.status_code != 200:
         print("Task completion failed. Please try again.")
     else:
-        wf.clear_cache()
+        wf.cache_data('tasks', None)
         print("Task completed.")
 
 

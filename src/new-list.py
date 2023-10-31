@@ -9,7 +9,7 @@ def main(wf):
     if r.status_code != 200:
         print("List could not be created. Please try again.")
     else:
-        wf.clear_cache()
+        wf.cache_data('lists', None)
         print('{} list created.'.format(list_name))
 
 
