@@ -1,8 +1,8 @@
 import datetime
 def parse_new_task(query):
-    due_date = None
-    if 'due: ' in query:
-        task_name, due_date = query.split('due: ')
+    due_date = ''
+    if 'due:' in query:
+        task_name, due_date = query.split('due:')
         due_date = parse_due_date(due_date)
     else:
         task_name = query
