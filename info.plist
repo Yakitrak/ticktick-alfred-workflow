@@ -124,20 +124,7 @@
 				<false/>
 			</dict>
 		</array>
-		<key>8D7DEC1E-97D9-44A7-B140-3070763C3AAF</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>F62B208F-4DE7-480F-867A-E20F71CC19D2</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
-		</array>
-		<key>926C6951-E18D-48B3-85D8-0714ED3249D2</key>
+		<key>801121C8-DC07-4983-A4D1-24199CF09013</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
@@ -176,11 +163,11 @@
 				<false/>
 			</dict>
 		</array>
-		<key>B2507937-281B-4488-8C9C-87AE2BC74D00</key>
+		<key>C5C83A22-CD59-4373-87EC-81D194B3A359</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>8D7DEC1E-97D9-44A7-B140-3070763C3AAF</string>
+				<string>97AA7C50-EF72-4A17-A89F-CF14B5CAF919</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -189,11 +176,24 @@
 				<false/>
 			</dict>
 		</array>
-		<key>C5C83A22-CD59-4373-87EC-81D194B3A359</key>
+		<key>D832F0C1-AB4F-44E1-8A3A-C8D15F0D0EAC</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>97AA7C50-EF72-4A17-A89F-CF14B5CAF919</string>
+				<string>EFCA3C54-0E30-4A5D-9A8D-1AE1B729D59D</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>D8E2AD2F-D824-40E3-ACEB-1E7F0483C6BE</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>D832F0C1-AB4F-44E1-8A3A-C8D15F0D0EAC</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -296,7 +296,7 @@
 				<key>runningsubtext</key>
 				<string>Searching lists..</string>
 				<key>script</key>
-				<string>python3 ./src/get-lists.py $1</string>
+				<string>python3 ./src/list-search.py $1</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
@@ -346,7 +346,7 @@
 				<key>escaping</key>
 				<integer>102</integer>
 				<key>script</key>
-				<string>python3 ./src/get-token.py $1</string>
+				<string>python3 ./src/setup-access-token.py $1</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
@@ -406,27 +406,6 @@
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>argumenttype</key>
-				<integer>0</integer>
-				<key>keyword</key>
-				<string>tln</string>
-				<key>subtext</key>
-				<string>Creates new list with your specificed name</string>
-				<key>text</key>
-				<string>TickTick List New</string>
-				<key>withspace</key>
-				<true/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.input.keyword</string>
-			<key>uid</key>
-			<string>926C6951-E18D-48B3-85D8-0714ED3249D2</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>lastpathcomponent</key>
 				<false/>
 				<key>onlyshowifquerypopulated</key>
@@ -448,12 +427,61 @@
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>alfredfiltersresults</key>
+				<false/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
+				<key>argumenttreatemptyqueryasnil</key>
+				<true/>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>keyword</key>
+				<string>tln</string>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<true/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
+				<key>runningsubtext</key>
+				<string></string>
+				<key>script</key>
+				<string>python3 ./src/list-new-helper.py $1</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>subtext</key>
+				<string>Creates new list with your specified name</string>
+				<key>title</key>
+				<string>TickTick List New</string>
+				<key>type</key>
+				<integer>5</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>801121C8-DC07-4983-A4D1-24199CF09013</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>concurrently</key>
 				<false/>
 				<key>escaping</key>
 				<integer>102</integer>
 				<key>script</key>
-				<string>python3 ./src/new-list.py $1</string>
+				<string>python3 ./src/list-new-post.py $1</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
@@ -471,23 +499,46 @@
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>browser</key>
-				<string></string>
-				<key>skipqueryencode</key>
+				<key>lastpathcomponent</key>
 				<false/>
-				<key>skipvarencode</key>
+				<key>onlyshowifquerypopulated</key>
+				<true/>
+				<key>removeextension</key>
 				<false/>
-				<key>spaces</key>
-				<string></string>
-				<key>url</key>
-				<string>https://ticktick.com/webapp/#c/all/calendar/w</string>
+				<key>text</key>
+				<string>TickTick Alfred Workflow</string>
+				<key>title</key>
+				<string>{query}</string>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.action.openurl</string>
+			<string>alfred.workflow.output.notification</string>
 			<key>uid</key>
-			<string>E41C6262-AAA6-455B-ABD4-C51CC910596A</string>
+			<string>974FB3E7-29DA-4C3C-A73B-C0472916D337</string>
 			<key>version</key>
 			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>script</key>
+				<string>python3 ./src/setup-sync.py</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>1C752214-A9F6-4AAB-8714-092E72359AD6</string>
+			<key>version</key>
+			<integer>2</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -495,18 +546,18 @@
 				<key>argumenttype</key>
 				<integer>2</integer>
 				<key>keyword</key>
-				<string>tcw</string>
+				<string>tsync</string>
 				<key>subtext</key>
-				<string></string>
+				<string>Clears requests cache (does not remove authorisation)</string>
 				<key>text</key>
-				<string>TickTick Calendar (Week)</string>
+				<string>TickTick Sync</string>
 				<key>withspace</key>
 				<false/>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.input.keyword</string>
 			<key>uid</key>
-			<string>4E9E6707-A31E-48AE-9B16-850C0C4D03F9</string>
+			<string>1E10B0D4-D932-4A5B-A760-0AC803804A5F</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -559,7 +610,7 @@
 				<key>runningsubtext</key>
 				<string>Searching tasks..</string>
 				<key>script</key>
-				<string>python3 ./src/get-tasks.py $1</string>
+				<string>python3 ./src/task-search.py $1</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
@@ -579,6 +630,92 @@
 			<string>19AB8A52-0342-4DA8-970D-1952CA2A7677</string>
 			<key>version</key>
 			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>browser</key>
+				<string></string>
+				<key>skipqueryencode</key>
+				<false/>
+				<key>skipvarencode</key>
+				<false/>
+				<key>spaces</key>
+				<string></string>
+				<key>url</key>
+				<string>https://ticktick.com/webapp/#c/all/calendar/w</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openurl</string>
+			<key>uid</key>
+			<string>E41C6262-AAA6-455B-ABD4-C51CC910596A</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>tcw</string>
+				<key>subtext</key>
+				<string></string>
+				<key>text</key>
+				<string>TickTick Calendar (Week)</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>4E9E6707-A31E-48AE-9B16-850C0C4D03F9</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<true/>
+				<key>removeextension</key>
+				<false/>
+				<key>text</key>
+				<string>TickTick Alfred Workflow</string>
+				<key>title</key>
+				<string>{query}</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>D7B14153-6DC0-47D6-9689-0399D2B52806</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>script</key>
+				<string>python3 ./src/task-complete.py $1</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>7129FA9C-A39D-46EB-9193-18E5AD9CC7C0</string>
+			<key>version</key>
+			<integer>2</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -621,50 +758,6 @@
 			<string>61709059-2CF3-4C84-A6E3-D9877853A7F0</string>
 			<key>version</key>
 			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>lastpathcomponent</key>
-				<false/>
-				<key>onlyshowifquerypopulated</key>
-				<true/>
-				<key>removeextension</key>
-				<false/>
-				<key>text</key>
-				<string>TickTick Alfred Workflow</string>
-				<key>title</key>
-				<string>{query}</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.output.notification</string>
-			<key>uid</key>
-			<string>D7B14153-6DC0-47D6-9689-0399D2B52806</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>concurrently</key>
-				<false/>
-				<key>escaping</key>
-				<integer>102</integer>
-				<key>script</key>
-				<string>python3 ./src/complete-task.py $1</string>
-				<key>scriptargtype</key>
-				<integer>1</integer>
-				<key>scriptfile</key>
-				<string></string>
-				<key>type</key>
-				<integer>0</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.script</string>
-			<key>uid</key>
-			<string>7129FA9C-A39D-46EB-9193-18E5AD9CC7C0</string>
-			<key>version</key>
-			<integer>2</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -716,7 +809,7 @@
 				<key>escaping</key>
 				<integer>102</integer>
 				<key>script</key>
-				<string>python3 ./src/new-task.py $1</string>
+				<string>python3 ./src/task-new-post.py $1</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
@@ -727,116 +820,79 @@
 			<key>type</key>
 			<string>alfred.workflow.action.script</string>
 			<key>uid</key>
-			<string>8D7DEC1E-97D9-44A7-B140-3070763C3AAF</string>
+			<string>D832F0C1-AB4F-44E1-8A3A-C8D15F0D0EAC</string>
 			<key>version</key>
 			<integer>2</integer>
 		</dict>
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<true/>
+				<key>removeextension</key>
+				<false/>
+				<key>text</key>
+				<string>TickTick Alfred Workflow</string>
+				<key>title</key>
+				<string>{query}</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>EFCA3C54-0E30-4A5D-9A8D-1AE1B729D59D</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>alfredfiltersresults</key>
+				<false/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
+				<key>argumenttreatemptyqueryasnil</key>
+				<true/>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
 				<key>argumenttype</key>
 				<integer>0</integer>
-				<key>keyword</key>
-				<string>ttn</string>
-				<key>subtext</key>
-				<string>Creates new task with your specificed name</string>
-				<key>text</key>
-				<string>TickTick Task New</string>
-				<key>withspace</key>
-				<true/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.input.keyword</string>
-			<key>uid</key>
-			<string>B2507937-281B-4488-8C9C-87AE2BC74D00</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>lastpathcomponent</key>
-				<false/>
-				<key>onlyshowifquerypopulated</key>
-				<true/>
-				<key>removeextension</key>
-				<false/>
-				<key>text</key>
-				<string>TickTick Alfred Workflow</string>
-				<key>title</key>
-				<string>{query}</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.output.notification</string>
-			<key>uid</key>
-			<string>F62B208F-4DE7-480F-867A-E20F71CC19D2</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>lastpathcomponent</key>
-				<false/>
-				<key>onlyshowifquerypopulated</key>
-				<true/>
-				<key>removeextension</key>
-				<false/>
-				<key>text</key>
-				<string>TickTick Alfred Workflow</string>
-				<key>title</key>
-				<string>{query}</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.output.notification</string>
-			<key>uid</key>
-			<string>974FB3E7-29DA-4C3C-A73B-C0472916D337</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>concurrently</key>
-				<false/>
 				<key>escaping</key>
 				<integer>102</integer>
+				<key>keyword</key>
+				<string>ttn</string>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<true/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
+				<key>runningsubtext</key>
+				<string></string>
 				<key>script</key>
-				<string>python3 ./src/clear-cache.py</string>
+				<string>python3 ./src/task-new-helper.py $1</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
 				<string></string>
-				<key>type</key>
-				<integer>0</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.script</string>
-			<key>uid</key>
-			<string>1C752214-A9F6-4AAB-8714-092E72359AD6</string>
-			<key>version</key>
-			<integer>2</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>argumenttype</key>
-				<integer>2</integer>
-				<key>keyword</key>
-				<string>tclear</string>
 				<key>subtext</key>
-				<string>Clears requests cache (does not remove authorisation)</string>
-				<key>text</key>
-				<string>TickTick Clear Cache</string>
+				<string>Creates new task with your specified name</string>
+				<key>title</key>
+				<string>TickTick Task New</string>
+				<key>type</key>
+				<integer>5</integer>
 				<key>withspace</key>
-				<false/>
+				<true/>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.input.keyword</string>
+			<string>alfred.workflow.input.scriptfilter</string>
 			<key>uid</key>
-			<string>1E10B0D4-D932-4A5B-A760-0AC803804A5F</string>
+			<string>D8E2AD2F-D824-40E3-ACEB-1E7F0483C6BE</string>
 			<key>version</key>
-			<integer>1</integer>
+			<integer>3</integer>
 		</dict>
 	</array>
 	<key>readme</key>
@@ -885,23 +941,23 @@ open the task in TickTick.
 		<key>1C752214-A9F6-4AAB-8714-092E72359AD6</key>
 		<dict>
 			<key>xpos</key>
-			<real>850</real>
+			<real>820</real>
 			<key>ypos</key>
-			<real>715</real>
+			<real>320</real>
 		</dict>
 		<key>1E10B0D4-D932-4A5B-A760-0AC803804A5F</key>
 		<dict>
 			<key>xpos</key>
-			<real>675</real>
+			<real>645</real>
 			<key>ypos</key>
-			<real>720</real>
+			<real>325</real>
 		</dict>
 		<key>4E9E6707-A31E-48AE-9B16-850C0C4D03F9</key>
 		<dict>
 			<key>xpos</key>
-			<real>700</real>
+			<real>820</real>
 			<key>ypos</key>
-			<real>325</real>
+			<real>470</real>
 		</dict>
 		<key>521BB2CB-6804-4FC0-96A4-FAAD65E63188</key>
 		<dict>
@@ -913,9 +969,9 @@ open the task in TickTick.
 		<key>61709059-2CF3-4C84-A6E3-D9877853A7F0</key>
 		<dict>
 			<key>xpos</key>
-			<real>700</real>
+			<real>820</real>
 			<key>ypos</key>
-			<real>445</real>
+			<real>590</real>
 		</dict>
 		<key>6E1237BA-323C-4AC3-A522-52F4A22A7C20</key>
 		<dict>
@@ -931,12 +987,12 @@ open the task in TickTick.
 			<key>ypos</key>
 			<real>560</real>
 		</dict>
-		<key>8D7DEC1E-97D9-44A7-B140-3070763C3AAF</key>
+		<key>801121C8-DC07-4983-A4D1-24199CF09013</key>
 		<dict>
 			<key>xpos</key>
-			<real>245</real>
+			<real>30</real>
 			<key>ypos</key>
-			<real>700</real>
+			<real>245</real>
 		</dict>
 		<key>8E6B4CB7-EFFD-49BB-9431-0FC323586DAE</key>
 		<dict>
@@ -944,13 +1000,6 @@ open the task in TickTick.
 			<real>380</real>
 			<key>ypos</key>
 			<real>245</real>
-		</dict>
-		<key>926C6951-E18D-48B3-85D8-0714ED3249D2</key>
-		<dict>
-			<key>xpos</key>
-			<real>30</real>
-			<key>ypos</key>
-			<real>240</real>
 		</dict>
 		<key>97215EF3-F4C6-44CA-804E-5738D379E759</key>
 		<dict>
@@ -962,23 +1011,23 @@ open the task in TickTick.
 		<key>974FB3E7-29DA-4C3C-A73B-C0472916D337</key>
 		<dict>
 			<key>xpos</key>
-			<real>1005</real>
+			<real>975</real>
 			<key>ypos</key>
-			<real>710</real>
+			<real>315</real>
 		</dict>
 		<key>97AA7C50-EF72-4A17-A89F-CF14B5CAF919</key>
 		<dict>
 			<key>xpos</key>
-			<real>865</real>
+			<real>985</real>
 			<key>ypos</key>
-			<real>565</real>
+			<real>710</real>
 		</dict>
 		<key>A78F86EA-62DA-4918-88ED-B3599F17CFB3</key>
 		<dict>
 			<key>xpos</key>
-			<real>865</real>
+			<real>985</real>
 			<key>ypos</key>
-			<real>445</real>
+			<real>590</real>
 		</dict>
 		<key>A94BB0EB-3858-4E8B-8BF5-3A8662DD7428</key>
 		<dict>
@@ -994,19 +1043,12 @@ open the task in TickTick.
 			<key>ypos</key>
 			<real>170</real>
 		</dict>
-		<key>B2507937-281B-4488-8C9C-87AE2BC74D00</key>
-		<dict>
-			<key>xpos</key>
-			<real>60</real>
-			<key>ypos</key>
-			<real>700</real>
-		</dict>
 		<key>C5C83A22-CD59-4373-87EC-81D194B3A359</key>
 		<dict>
 			<key>xpos</key>
-			<real>695</real>
+			<real>815</real>
 			<key>ypos</key>
-			<real>565</real>
+			<real>710</real>
 		</dict>
 		<key>D7B14153-6DC0-47D6-9689-0399D2B52806</key>
 		<dict>
@@ -1015,12 +1057,26 @@ open the task in TickTick.
 			<key>ypos</key>
 			<real>560</real>
 		</dict>
+		<key>D832F0C1-AB4F-44E1-8A3A-C8D15F0D0EAC</key>
+		<dict>
+			<key>xpos</key>
+			<real>235</real>
+			<key>ypos</key>
+			<real>810</real>
+		</dict>
+		<key>D8E2AD2F-D824-40E3-ACEB-1E7F0483C6BE</key>
+		<dict>
+			<key>xpos</key>
+			<real>65</real>
+			<key>ypos</key>
+			<real>810</real>
+		</dict>
 		<key>E41C6262-AAA6-455B-ABD4-C51CC910596A</key>
 		<dict>
 			<key>xpos</key>
-			<real>865</real>
+			<real>985</real>
 			<key>ypos</key>
-			<real>325</real>
+			<real>470</real>
 		</dict>
 		<key>E4667CFD-E90D-41AB-8548-C2B353B4E48F</key>
 		<dict>
@@ -1036,19 +1092,19 @@ open the task in TickTick.
 			<key>ypos</key>
 			<real>35</real>
 		</dict>
+		<key>EFCA3C54-0E30-4A5D-9A8D-1AE1B729D59D</key>
+		<dict>
+			<key>xpos</key>
+			<real>405</real>
+			<key>ypos</key>
+			<real>810</real>
+		</dict>
 		<key>F10D878A-E0A0-45AA-A448-6A10CF3848A6</key>
 		<dict>
 			<key>xpos</key>
 			<real>720</real>
 			<key>ypos</key>
 			<real>35</real>
-		</dict>
-		<key>F62B208F-4DE7-480F-867A-E20F71CC19D2</key>
-		<dict>
-			<key>xpos</key>
-			<real>405</real>
-			<key>ypos</key>
-			<real>705</real>
 		</dict>
 	</dict>
 	<key>userconfigurationconfig</key>
