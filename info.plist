@@ -762,27 +762,6 @@
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>browser</key>
-				<string></string>
-				<key>skipqueryencode</key>
-				<false/>
-				<key>skipvarencode</key>
-				<false/>
-				<key>spaces</key>
-				<string></string>
-				<key>url</key>
-				<string>https://ticktick.com/webapp/#c/all/calendar/m</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.openurl</string>
-			<key>uid</key>
-			<string>97AA7C50-EF72-4A17-A89F-CF14B5CAF919</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>argumenttype</key>
 				<integer>2</integer>
 				<key>keyword</key>
@@ -798,6 +777,27 @@
 			<string>alfred.workflow.input.keyword</string>
 			<key>uid</key>
 			<string>C5C83A22-CD59-4373-87EC-81D194B3A359</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>browser</key>
+				<string></string>
+				<key>skipqueryencode</key>
+				<false/>
+				<key>skipvarencode</key>
+				<false/>
+				<key>spaces</key>
+				<string></string>
+				<key>url</key>
+				<string>https://ticktick.com/webapp/#c/all/calendar/m</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openurl</string>
+			<key>uid</key>
+			<string>97AA7C50-EF72-4A17-A89F-CF14B5CAF919</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>

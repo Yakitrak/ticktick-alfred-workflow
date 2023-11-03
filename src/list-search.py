@@ -8,6 +8,13 @@ def main(wf):
     token = wf.stored_data('access_token')
     lists = wf.cached_data('lists', lambda: get_lists(token), max_age=60)
 
+    inbox_item = {
+        'id': 'inbox',
+        'name': 'Inbox',
+        'kind': 'Task'
+    }
+
+    lists.insert(0, inbox_item)
     items = wf.filter(query, lists, key_for_list) if query else lists
 
     if not items:

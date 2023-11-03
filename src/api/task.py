@@ -37,8 +37,9 @@ def create_task(token, task_name, due_date=None):
     url = TICKTICK_API_URL + '/task'
     data = {
         'title': task_name,
-        'dueDate': due_date,
     }
-    print(data)
-    # return requests.post(url, headers=headers, json=data)
+    if due_date:
+        data['dueDate'] = due_date + "+0000"
+    # print(data)
+    return requests.post(url, headers=headers, json=data)
 

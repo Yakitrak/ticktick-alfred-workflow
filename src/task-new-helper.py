@@ -1,17 +1,20 @@
 import sys
 from ualfred import Workflow
-from api.task import create_task
 from utils.parse import parse_new_task
 
 def main(wf):
     query = " ".join(wf.args)
-    task_details = parse_new_task(query)
-    task_name = task_details['name']
-    due_date = task_details['due_date']
+    task_name, task_due_formatted, task_due_pretty = parse_new_task(query)
 
     title = "TickTick Task New: {}".format(task_name)
-    subtitle = "Create a new task with name '{}' and due date '{}'".format(task_name, due_date)
-    arg = " ".join([task_name, due_date])
+    subtitle = "Create a new task with name '{}'".format(task_name)
+    arg = "{}|{}".format(task_name, task_due_formatted) if task_due_formatted else task_name
+
+    if task_due_pretty:
+        subtitle += " and due {}".format(task_due_pretty)
+    else:
+        subtitle += " (try comma and 'tod', 'tom', or '27/10/2018 10:00am')"
+
     wf.add_item(title=title, subtitle=subtitle, arg=arg, valid=True)
     wf.send_feedback()
 
