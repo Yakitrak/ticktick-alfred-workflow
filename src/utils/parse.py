@@ -1,18 +1,6 @@
-import datetime
-
+import parsedatetime
 from utils.constants import PRETTY_DATE_FORMAT, PRETTY_TIME_FORMAT
-
-date_mappings = {
-    'today': (0, "Today"),
-    'tod': (0, "Today"),
-    'tomorrow': (1, "Tomorrow"),
-    'tom': (1, "Tomorrow"),
-    'next week': (7, "Next Week"),
-    'nw': (7, "Next Week"),
-    'next month': (30, "Next Month"),
-    'nm': (30, "Next Month"),
-}
-
+import datetime
 
 def parse_new_task(query):
     if ',' not in query:
@@ -26,21 +14,20 @@ def parse_new_task(query):
     return task_name, task_due_formatted, task_due_pretty
 
 
-def parse_due_date(due_datetime):
-    if due_datetime in date_mappings:
-        days, pretty = date_mappings[due_datetime]
-        due_datetime = datetime.datetime.now() + datetime.timedelta(days=days)
-        return due_datetime.isoformat(), pretty
+def parse_due_date(date_string):
+    try:
+        cal = parsedatetime.Calendar()
+        # st source time to 00:00:00 so that if time is not specified, it will be 00:00:00
+        parsed_date, parse_status = cal.parseDT(date_string, sourceTime=datetime.datetime.now().replace(hour=0, minute=0, second=0, microsecond=0))
+        if parse_status != 0:
+            formatted_time = parsed_date.isoformat() + "+0000"
+            # if time is 00:00:00, then don't show it
+            pretty_time = parsed_date.strftime(PRETTY_DATE_FORMAT) + " " + parsed_date.strftime(
+                PRETTY_TIME_FORMAT) if parsed_date.strftime(PRETTY_TIME_FORMAT) != "12:00AM" else parsed_date.strftime(
+                PRETTY_DATE_FORMAT)
 
-    formats_to_try = [
-        PRETTY_DATE_FORMAT,
-        PRETTY_DATE_FORMAT + ' ' + PRETTY_TIME_FORMAT,
-    ]
-
-    for fmt in formats_to_try:
-        try:
-            due_datetime = datetime.datetime.strptime(due_datetime, fmt)
-            return due_datetime.isoformat(), due_datetime.strftime(PRETTY_DATE_FORMAT + ' ' + PRETTY_TIME_FORMAT)
-        except ValueError:
-            pass
-    return None, None
+            return formatted_time, pretty_time
+        else:
+            return None, None
+    except:
+        return None, None

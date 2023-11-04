@@ -4,6 +4,12 @@ from utils.parse import parse_new_task
 
 def main(wf):
     query = " ".join(wf.args)
+
+    if query.count(',') > 1:
+        wf.add_item(title="Too many commas", subtitle="Please only use one comma to separate your task name and due date", valid=True)
+        wf.send_feedback()
+        return
+
     task_name, task_due_formatted, task_due_pretty = parse_new_task(query)
 
     title = "TickTick Task New: {}".format(task_name)
@@ -13,7 +19,7 @@ def main(wf):
     if task_due_pretty:
         subtitle += " and due {}".format(task_due_pretty)
     else:
-        subtitle += " (try comma and 'tod', 'tom', or '27/10/2018 10:00am')"
+        subtitle += " (try using a comma and then add your time, e.g. tomorrow 10am)"
 
     wf.add_item(title=title, subtitle=subtitle, arg=arg, valid=True)
     wf.send_feedback()
