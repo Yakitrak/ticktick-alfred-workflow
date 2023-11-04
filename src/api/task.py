@@ -39,7 +39,10 @@ def create_task(token, task_name, due_date=None):
         'title': task_name,
     }
     if due_date:
-        data['dueDate'] = due_date + "+0000"
+        data['dueDate'] = due_date
+        if due_date.endswith('T00:00:00+0000'):
+            data['isAllDay'] = True
+
     # print(data)
     return requests.post(url, headers=headers, json=data)
 

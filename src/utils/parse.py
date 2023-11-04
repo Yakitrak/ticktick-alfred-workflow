@@ -15,6 +15,11 @@ def parse_new_task(query):
 
 
 def parse_due_date(date_string):
+    # today and tomorrow automatically changes to 9am for some reason so we mitigate it to 00:00:00
+    if date_string == "today" or date_string == "tomorrow":
+        date_string = date_string.replace("today", "today 00:00:00")
+        date_string = date_string.replace("tomorrow", "tomorrow 00:00:00")
+
     try:
         cal = parsedatetime.Calendar()
         # st source time to 00:00:00 so that if time is not specified, it will be 00:00:00
