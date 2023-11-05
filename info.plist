@@ -897,31 +897,14 @@
 	</array>
 	<key>readme</key>
 	<string>## Setup
-1. Go to `https://developer.ticktick.com/manage` and 
-create a new app with any name you want. You'll be asked for a redirect url, pleae enter in `http://localhost`.
+1. Go to [https://developer.ticktick.com/manage](https://developer.ticktick.com/manage) and create a new app with any name you want. You'll be asked for a redirect url, pleae enter in `http://localhost`. Now you should have a "Client ID" and "Client Secret".
 2. Go to "Configure Workflow" button on this workflow on Alfred, and copy and paste the "Client ID" and "Client Secret"
 3. Using Alfred, type in `tsetup1` and authorise the workflow, you'll be redirected to 
-`http://localhost?code=xxxxx`.
-4. Lastly, type in `tsetup2` followed by the code from the step 1. You are now ready to use the workflow!
+`http://localhost?code=xxxxx`. Please copy the code from the url.
+4. Using Alred, type in `tsetup2` followed by the code from the step 1 (e.g. `tsetup2 xxxxx`). You are now ready to use the workflow!
 
 ## Usage
-### Lists
-`tls &lt;query&gt;` - Search for a list in TickTick. Pressing enter will open the list in TickTick.
-
-`tla &lt;query&gt;` - Create a new list in TickTick. Pressing enter will open the list in TickTick.
-
-### Tasks
-`tts &lt;query&gt;` - Search for a task in TickTick. Pressing enter will open the task in TickTick.
-- You can also press `cmd + enter` to complete the task.
-- You can use `@today` or `@tomorrow` to search for tasks due today or tomorrow respectively.
-
-`tta &lt;query&gt;` - Add a new task to TickTick`. Pressing enter will only add the test, but pressing `cmd + enter` will
-open the task in TickTick.
-
-### Calendar
-`tcd` - Open the calendar in TickTick, in the day view.
-`tcw` - Open the calendar in TickTick, in the week view.
-`tcm` - Open the calendar in TickTick, in the month view.</string>
+For detailed usage instructions please go to: https://github.com/Yakitrak/ticktick-alfred-workflow</string>
 	<key>uidata</key>
 	<dict>
 		<key>07134673-1DD7-427E-B638-993B2D882394</key>
@@ -1152,8 +1135,6 @@ open the task in TickTick.
 			<string>client_secret</string>
 		</dict>
 	</array>
-	<key>variablesdontexport</key>
-	<array/>
 	<key>version</key>
 	<string>0.1</string>
 	<key>webaddress</key>

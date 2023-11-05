@@ -2,7 +2,7 @@
 
 <img src="/docs/main.gif" width="500" height="400" alt="TickTick Alfred Workflow" />
 
-This workflow allows you to search, open, add, and complete tasks in TickTick. 
+This workflow allows you to search, open, add, and complete tasks in [TickTick](https://ticktick.com/).
 
 ## Table of Contents
 - [Installation](#installation)
@@ -116,7 +116,7 @@ If you have any issues or feature requests, please open an [issue](https://githu
 
 ## Acknowledgements
 - [TickTick API](https://developer.ticktick.com/api#/openapi) - The TickTick API used to build this workflow.
-- [ualfred](https://github.com/ischaojie/ualfred) + [Alfred Workflow](https://github.com/deanishe/alfred-workflow) - The python3 library fork and the Alfred workflow library used to build this workflow.
+- [ualfred](https://github.com/ischaojie/ualfred) & [Alfred Workflow](https://github.com/deanishe/alfred-workflow) - The python3 library fork and the Alfred workflow library used to build this workflow.
 - [parsedatetime](https://github.com/bear/parsedatetime/) - Used to parse natural language dates and times for creating tasks.
 
 ## License
