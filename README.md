@@ -2,6 +2,8 @@
 
 This workflow allows you to search, open, add, and complete tasks in [TickTick](https://ticktick.com/)
 
+This workflow is not an official TickTick product and is not affiliated with TickTick in any way.
+
 <img src="/docs/main.gif" width="500" height="400" alt="TickTick Alfred Workflow" />
 
 ## Table of Contents
