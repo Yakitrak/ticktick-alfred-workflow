@@ -1,6 +1,6 @@
 # TickTick Alfred Workflow
 
-<img src="/docs/main.gif" width="200" height="200" alt="TickTick Alfred Workflow" />
+<img src="/docs/main.gif" width="200" height="400" alt="TickTick Alfred Workflow" />
 
 This workflow allows you to search, open, add, and complete tasks in TickTick. 
 
@@ -41,16 +41,16 @@ create a new app with any name you want. You'll be asked for a redirect url, ple
 ### Lists
 #### List Search `tls <query>`
 Search for a list in TickTick. Pressing enter will open the list in TickTick.
-<img src="/docs/list_search.png" width="400" height="200" alt="List Search" />
+<img src="/docs/list_search.png" alt="List Search" />
 
 #### Create List `tln <list-name>`
 Create a new list in TickTick with the given name. 
-<img src="/docs/create_list.png" width="400" height="200" alt="Create List" />
+<img src="/docs/create_list.png" alt="Create List" />
 
 ### Tasks
 #### Task Search `tts <query>`
 Search for a task in TickTick. 
-<img src="/docs/task_search.png" width="400" height="200" alt="Task Search" />
+<img src="/docs/task_search.png" alt="Task Search" />
 - You can search by task name, list name, or shortcuts: 
   -  `tts` - Search for all tasks
   - `tts <task-name>` - Search for tasks with the given name
@@ -65,7 +65,7 @@ As mentioned in the [Current Limitations](#current-limitations) section, you can
 
 #### Create Task `ttn <task-name>, <due-date>`
 Create a new task in TickTick with the given name.
-<img src="/docs/create_task.png" width="400" height="200" alt="Create Task" />
+<img src="/docs/create_task.png" alt="Create Task" />
 - You can add an optional comma at the end and include a due date using natural language.
    - `ttn Do laundry`
    - `ttn Do the laundry, tomorrow at 5pm`
@@ -75,7 +75,7 @@ Create a new task in TickTick with the given name.
 As mentioned in the [Current Limitations](#current-limitations) section, you can only add tasks to the Inbox list at the moment.
 
 ### Sync `tsync`
-<img src="/docs/sync.png" width="400" height="200" alt="Sync" />
+<img src="/docs/sync.png" alt="Sync" />
 Sync your TickTick account with the workflow by clearing the cache and fetching your latest lists and tasks. This is done automatically when:
 - You search for a list or task, and it's been more than 5 minutes since the last sync
 - You create a new list or task
