@@ -1,8 +1,8 @@
 # TickTick Alfred Workflow
 
-<img src="/docs/main.gif" width="500" height="400" alt="TickTick Alfred Workflow" />
+This workflow allows you to search, open, add, and complete tasks in [TickTick](https://ticktick.com/)
 
-This workflow allows you to search, open, add, and complete tasks in [TickTick](https://ticktick.com/).
+<img src="/docs/main.gif" width="500" height="400" alt="TickTick Alfred Workflow" />
 
 ## Table of Contents
 - [Installation](#installation)
@@ -12,7 +12,8 @@ This workflow allows you to search, open, add, and complete tasks in [TickTick](
     - [List Search](#list-search-tls-query)
     - [Create List](#create-list-tln-list-name)
   - [Tasks](#tasks)
-    - [Task Search](#task-search-tts-query) (& complete task)
+    - [Task Search](#task-search-tts-query) 
+    - [Complete Task](#complete-task)
     - [Create Task](#create-task-ttn-task-name-due-date)
   - [Sync](#sync-tsync)
   - [Calendar](#calendar)
@@ -51,31 +52,33 @@ Create a new list in TickTick with the given name.
 
 ### Tasks
 #### Task Search `tts <query>`
-Search for a task in TickTick. 
+Search for a task in TickTick. Pressing enter will open the task in TickTick.
 
 <img src="/docs/task_search.png"  width="500" alt="Task Search" />
-- You can search by task name, list name, or shortcuts: 
-  -  `tts` - Search for all tasks
-  - `tts <task-name>` - Search for tasks with the given name
-  - `tts <list-name>` - Search for tasks in the given list
-  - `tts @today` or `tts @tod` - Search for tasks due today
-  - `tts @tomorrow` or `tts @tom` - Search for tasks due tomorrow
-  - `tts @thisweek` or `tts @tw` - Search for tasks due this week
-- Pressing enter will open the task in TickTick. 
-- You can also press `cmd + enter` on a task to complete the task.
+
+You can search for tasks in a few different ways:
+- `tts` - Search for all tasks
+- `tts <task-name>` - Search for tasks with the given name
+- `tts <list-name>` - Search for tasks in the given list
+- `tts @today` or `tts @tod` - Search for tasks due today
+- `tts @tomorrow` or `tts @tom` - Search for tasks due tomorrow
+- `tts @thisweek` or `tts @tw` - Search for tasks due this week
 
 As mentioned in the [Current Limitations](#current-limitations) section, you cannot search for tasks in Inbox at the moment.
+
+#### Complete Task
+You can complete a task by pressing `cmd + enter` when selecting a task in the search results from the [Task Search](#task-search-tts-query) command.
 
 #### Create Task `ttn <task-name>, <due-date>`
 Create a new task in TickTick with the given name.
 
 <img src="/docs/create_task.png" width="500"   alt="Create Task" />
 
-- You can add an optional comma at the end and include a due date using natural language.
-   - `ttn Do laundry`
-   - `ttn Do the laundry, tomorrow at 5pm`
-   - `ttn Do the laundry, next week`
-   - `ttn Do the laundry, monday`
+You can add an optional comma at the end and include a due date using natural language:
+- `ttn Do laundry`
+- `ttn Do the laundry, tomorrow at 5pm`
+- `ttn Do the laundry, next week`
+- `ttn Do the laundry, monday`
 
 As mentioned in the [Current Limitations](#current-limitations) section, you can only add tasks to the Inbox list at the moment.
 
@@ -109,7 +112,6 @@ Open the calendar in TickTick, in the month view.
 - You cannot add tasks to any list other than Inbox - this is a limitation of the TickTick API.
 
 As the TickTick API is quite new, I'm hoping these limitations will be fixed in the future.
-
 
 ## Contributing
 If you have any issues or feature requests, please open an [issue](https://github.com/yakitrak/ticktick-alfred-workflow/issues/new) or a [pull request](https://github.com/Yakitrak/ticktick-alfred-workflow/pulls).
