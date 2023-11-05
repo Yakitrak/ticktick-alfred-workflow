@@ -1140,6 +1140,6 @@ For detailed usage instructions please go to: https://github.com/Yakitrak/tickti
 	<key>version</key>
 	<string>v1.0.0</string>
 	<key>webaddress</key>
-	<string>https://github.com/Yakitrak/alfred-ticktick-workflow</string>
+	<string>https://github.com/Yakitrak/ticktick-alfred-integration</string>
 </dict>
 </plist>
