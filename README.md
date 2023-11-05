@@ -32,7 +32,7 @@ you will need to have the [Alfred Powerpack](https://www.alfredapp.com/powerpack
 
 ## Setup
 1. Go to [https://developer.ticktick.com/manage](https://developer.ticktick.com/manage) and 
-create a new app with any name you want. You'll be asked for a redirect url, pleae enter in `http://localhost`. Now you should have a "Client ID" and "Client Secret".
+create a new app with any name you want. You'll be asked for a redirect url, please enter in `http://localhost`. Now you should have a "Client ID" and "Client Secret".
 2. Go to "Configure Workflow" button on this workflow on Alfred, and copy and paste the "Client ID" and "Client Secret"
 3. Using Alfred, type in `tsetup1` and authorise the workflow, you'll be redirected to 
 `http://localhost?code=xxxxx`. Please copy the code from the url.
