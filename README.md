@@ -2,8 +2,6 @@
 
 This workflow allows you to search, open, add, and complete tasks in [TickTick](https://ticktick.com/)
 
-This workflow is not an official TickTick product and is not affiliated with TickTick in any way.
-
 <img src="/docs/main.gif" width="500" height="400" alt="TickTick Alfred Workflow" />
 
 ## Table of Contents
@@ -31,6 +29,9 @@ This workflow is not an official TickTick product and is not affiliated with Tic
 Click [here](https://github.com/yakitrak/ticktick-alfred-workflow/releases/latest) to download the latest version of the workflow. 
 Or you can build it yourself by cloning this repo into your Alfred workflows directory. To run this workflow,
 you will need to have the [Alfred Powerpack](https://www.alfredapp.com/powerpack/)  and python3 installed.
+
+Please note, this workflow is not an official TickTick product and is not affiliated with TickTick in any way. 
+
 
 ## Setup
 1. Go to [https://developer.ticktick.com/manage](https://developer.ticktick.com/manage) and 
