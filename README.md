@@ -19,23 +19,44 @@ create a new app with any name you want. You'll be asked for a redirect url, ple
 
 ## Usage
 ### Lists
-`tls <query>` - Search for a list in TickTick. Pressing enter will open the list in TickTick.
+#### List Search `tls <query>`
+Search for a list in TickTick. Pressing enter will open the list in TickTick.
 
-`tln <query>` - Create a new list in TickTick. Pressing enter will open the list in TickTick.
+#### Create List `tln <list-name>`
+Create a new list in TickTick with the given name. 
 
 ### Tasks
-`tts <query>` - Search for a task in TickTick. 
-- You can search by task name, list name, or "@today / @tod" or "@tomorrow / @tom" to search for tasks due today or tomorrow respectively.
-- Pressing enter will open the task in TickTick. You can also press `cmd + enter` to complete the task.
-- You can use `@today` or `@tomorrow` to search for tasks due today or tomorrow respectively.
+#### Task Search `tts <query>`
+Search for a task in TickTick. 
+- You can search by task name, list name, or shortcuts:
+  - `@today / @tod` - Search for tasks due today
+  - `@tomorrow / @tom` - Search for tasks due tomorrow
+  - `@thisweek / @wk` - Search for tasks due this week
+- Pressing enter will open the task in TickTick. 
+- You can also press `cmd + enter` to complete the task.
 
-`ttn <query>` - Add a new task to TickTick`. Pressing enter will only add the test, but pressing `cmd + enter` will
-open the task in TickTick.
+#### Create Task `ttn <task-name>, <due-date>`
+Create a new task in TickTick with the given name.
+- You can add an optional comma at the end and include a due date using natural language.
+   - e.g. `ttn Do the laundry, tomorrow at 5pm`
+   - e.g. `ttn Do the laundry, next week`
 
 ### Calendar
-`tcd` - Open the calendar in TickTick, in the day view.
-`tcw` - Open the calendar in TickTick, in the week view.
-`tcm` - Open the calendar in TickTick, in the month view.
+#### Calendar (Day) `tcd`
+Open the calendar in TickTick, in the day view.
+
+#### Calendar (Week) `tcw`
+Open the calendar in TickTick, in the week view.
+
+#### Calendar (Month) `tcm`
+Open the calendar in TickTick, in the month view.
+
+## Current Limitations
+- Task search can take a while to load if you have a lot of lists - this is a limitation of the TickTick API as it requires a separate request for each list. Although once loaded it should be cached.
+- You cannot search for tasks in Inbox - this is a limitation of the TickTick API.
+- You cannot add tasks to any list other than Inbox - this is a limitation of the TickTick API.
+
+As the TickTick API is quite new, I'm hoping these limitations will be fixed in the future.
 
 ## Contributing
 If you have any issues or feature requests, please open an [issue](https://github.com/yakitrak/ticktick-alfred-workflow/issues/new).
@@ -43,10 +64,7 @@ If you have any issues or feature requests, please open an [issue](https://githu
 ## License
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details
 
-
-
-
-
-
-
+## Acknowledgements
+- [ualfred](https://github.com/ischaojie/ualfred) - Used to build the alfred workflow in python3. Also thanks to the [original Alfred Workflow]()
+- [parsedatetime](https://github.com/bear/parsedatetime/) - Used to parse natural language dates and times.
 
