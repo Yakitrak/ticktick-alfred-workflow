@@ -1,6 +1,6 @@
 # TickTick Alfred Workflow
 
-![TickTick Alfred Workflow](/docs/main.png)
+![Main](/docs/main.png)
 
 This workflow allows you to search, open, add, and complete tasks in TickTick. 
 
@@ -41,12 +41,15 @@ create a new app with any name you want. You'll be asked for a redirect url, ple
 ### Lists
 #### List Search `tls <query>`
 Search for a list in TickTick. Pressing enter will open the list in TickTick.
+<img src="/docs/list_search.gif" width="600" height="400" alt="List Search" />
 
 #### Create List `tln <list-name>`
 Create a new list in TickTick with the given name. 
+![Create List](/docs/create-list.png)
 
 ### Tasks
 #### Task Search `tts <query>`
+![Task Search](/docs/task-search.png)
 Search for a task in TickTick. 
 - You can search by task name, list name, or shortcuts: 
   -  `tts` - Search for all tasks
@@ -61,6 +64,7 @@ Search for a task in TickTick.
 As mentioned in the [Current Limitations](#current-limitations) section, you cannot search for tasks in Inbox at the moment.
 
 #### Create Task `ttn <task-name>, <due-date>`
+![Create Task](/docs/create-task.png)
 Create a new task in TickTick with the given name.
 - You can add an optional comma at the end and include a due date using natural language.
    - `ttn Do laundry`
@@ -71,14 +75,16 @@ Create a new task in TickTick with the given name.
 As mentioned in the [Current Limitations](#current-limitations) section, you can only add tasks to the Inbox list at the moment.
 
 ### Sync `tsync`
+![Sync](/docs/sync.png)
 Sync your TickTick account with the workflow by clearing the cache and fetching your latest lists and tasks. This is done automatically when:
 - You search for a list or task, and it's been more than 5 minutes since the last sync
 - You create a new list or task
 - You complete a task
 
-Once you run this command, please wait a few seconds for the sync to complete before searching for a list or task. This can take a while if you have a lot of lists.
+Once you run this command, please wait a moment for the sync to complete before searching for a list or task. This can take a few seconds if you have a lot of lists.
 
 ### Calendar
+<img src="/docs/calendar.jpeg" width="200" height="200" alt="Calendar" />
 #### Calendar (Day) `tcd`
 Open the calendar in TickTick, in the day view.
 
@@ -99,10 +105,10 @@ As the TickTick API is quite new, I'm hoping these limitations will be fixed in 
 ## Contributing
 If you have any issues or feature requests, please open an [issue](https://github.com/yakitrak/ticktick-alfred-workflow/issues/new) or a [pull request](https://github.com/Yakitrak/ticktick-alfred-workflow/pulls).
 
-
 ## Acknowledgements
+- [TickTick API](https://developer.ticktick.com/api#/openapi) - The TickTick API used to build this workflow.
 - [ualfred](https://github.com/ischaojie/ualfred) + [Alfred Workflow](https://github.com/deanishe/alfred-workflow) - The python3 library fork and the Alfred workflow library used to build this workflow.
-- [parsedatetime](https://github.com/bear/parsedatetime/) - Used to parse natural language dates and times.
+- [parsedatetime](https://github.com/bear/parsedatetime/) - Used to parse natural language dates and times for creating tasks.
 
 ## License
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details

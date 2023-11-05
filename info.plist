@@ -548,7 +548,7 @@
 				<key>keyword</key>
 				<string>tsync</string>
 				<key>subtext</key>
-				<string>Clears requests cache (does not remove authorisation)</string>
+				<string>Clears cache and reloads data (please wait a few seconds after using)</string>
 				<key>text</key>
 				<string>TickTick Sync</string>
 				<key>withspace</key>
@@ -660,7 +660,7 @@
 				<key>keyword</key>
 				<string>tcw</string>
 				<key>subtext</key>
-				<string></string>
+				<string>Opens calender in week view</string>
 				<key>text</key>
 				<string>TickTick Calendar (Week)</string>
 				<key>withspace</key>
@@ -746,7 +746,7 @@
 				<key>keyword</key>
 				<string>tcd</string>
 				<key>subtext</key>
-				<string></string>
+				<string>Opens calender in day view</string>
 				<key>text</key>
 				<string>TickTick Calendar (Day)</string>
 				<key>withspace</key>
@@ -767,7 +767,7 @@
 				<key>keyword</key>
 				<string>tcm</string>
 				<key>subtext</key>
-				<string></string>
+				<string>Opens calender in month view</string>
 				<key>text</key>
 				<string>TickTick Calendar (Month)</string>
 				<key>withspace</key>
