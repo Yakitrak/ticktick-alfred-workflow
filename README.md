@@ -1,21 +1,41 @@
 # TickTick Alfred Workflow
 
-<Screenshot-Here> 
+![TickTick Alfred Workflow](/docs/main.png)
 
-This workflow allows you to see, open, add, and complete tasks in TickTick. 
+This workflow allows you to search, open, add, and complete tasks in TickTick. 
+
+## Table of Contents
+- [Installation](#installation)
+- [Setup](#setup)
+- [Usage](#usage)
+  - [Lists](#lists)
+    - [List Search](#list-search-tls-query)
+    - [Create List](#create-list-tln-list-name)
+  - [Tasks](#tasks)
+    - [Task Search](#task-search-tts-query) (& complete task)
+    - [Create Task](#create-task-ttn-task-name-due-date)
+  - [Sync](#sync-tsync)
+  - [Calendar](#calendar)
+    - [Calendar (Day)](#calendar-day-tcd)
+    - [Calendar (Week)](#calendar-week-tcw)
+    - [Calendar (Month)](#calendar-month-tcm)
+- [Current Limitations](#current-limitations)
+- [Contributing](#contributing)
+- [Acknowledgements](#acknowledgements)
+- [License](#license)
 
 ## Installation
 Click [here](https://github.com/yakitrak/ticktick-alfred-workflow/releases/latest) to download the latest version of the workflow. 
 Or you can build it yourself by cloning this repo into your Alfred workflows directory. To run this workflow,
-you will need to have the [Alfred Powerpack](https://www.alfredapp.com/powerpack/) installed and python3 installed.
+you will need to have the [Alfred Powerpack](https://www.alfredapp.com/powerpack/)  and python3 installed.
 
 ## Setup
 1. Go to [https://developer.ticktick.com/manage](https://developer.ticktick.com/manage) and 
-create a new app with any name you want. You'll be asked for a redirect url, pleae enter in `http://localhost`.
+create a new app with any name you want. You'll be asked for a redirect url, pleae enter in `http://localhost`. Now you should have a "Client ID" and "Client Secret".
 2. Go to "Configure Workflow" button on this workflow on Alfred, and copy and paste the "Client ID" and "Client Secret"
 3. Using Alfred, type in `tsetup1` and authorise the workflow, you'll be redirected to 
-`http://localhost?code=xxxxx`.
-4. Using Alred, type in `tsetup2` followed by the code from the step 1. You are now ready to use the workflow!
+`http://localhost?code=xxxxx`. Please copy the code from the url.
+4. Using Alred, type in `tsetup2` followed by the code from the step 1 (e.g. `tsetup2 xxxxx`). You are now ready to use the workflow!
 
 ## Usage
 ### Lists
@@ -28,18 +48,35 @@ Create a new list in TickTick with the given name.
 ### Tasks
 #### Task Search `tts <query>`
 Search for a task in TickTick. 
-- You can search by task name, list name, or shortcuts:
-  - `@today / @tod` - Search for tasks due today
-  - `@tomorrow / @tom` - Search for tasks due tomorrow
-  - `@thisweek / @wk` - Search for tasks due this week
+- You can search by task name, list name, or shortcuts: 
+  -  `tts` - Search for all tasks
+  - `tts <task-name>` - Search for tasks with the given name
+  - `tts <list-name>` - Search for tasks in the given list
+  - `tts @today` or `tts @tod` - Search for tasks due today
+  - `tts @tomorrow` or `tts @tom` - Search for tasks due tomorrow
+  - `tts @thisweek` or `tts @tw` - Search for tasks due this week
 - Pressing enter will open the task in TickTick. 
-- You can also press `cmd + enter` to complete the task.
+- You can also press `cmd + enter` on a task to complete the task.
+
+As mentioned in the [Current Limitations](#current-limitations) section, you cannot search for tasks in Inbox at the moment.
 
 #### Create Task `ttn <task-name>, <due-date>`
 Create a new task in TickTick with the given name.
 - You can add an optional comma at the end and include a due date using natural language.
-   - e.g. `ttn Do the laundry, tomorrow at 5pm`
-   - e.g. `ttn Do the laundry, next week`
+   - `ttn Do laundry`
+   - `ttn Do the laundry, tomorrow at 5pm`
+   - `ttn Do the laundry, next week`
+   - `ttn Do the laundry, monday`
+
+As mentioned in the [Current Limitations](#current-limitations) section, you can only add tasks to the Inbox list at the moment.
+
+### Sync `tsync`
+Sync your TickTick account with the workflow by clearing the cache and fetching your latest lists and tasks. This is done automatically when:
+- You search for a list or task, and it's been more than 5 minutes since the last sync
+- You create a new list or task
+- You complete a task
+
+Once you run this command, please wait a few seconds for the sync to complete before searching for a list or task. This can take a while if you have a lot of lists.
 
 ### Calendar
 #### Calendar (Day) `tcd`
@@ -58,13 +95,15 @@ Open the calendar in TickTick, in the month view.
 
 As the TickTick API is quite new, I'm hoping these limitations will be fixed in the future.
 
+
 ## Contributing
-If you have any issues or feature requests, please open an [issue](https://github.com/yakitrak/ticktick-alfred-workflow/issues/new).
+If you have any issues or feature requests, please open an [issue](https://github.com/yakitrak/ticktick-alfred-workflow/issues/new) or a [pull request](https://github.com/Yakitrak/ticktick-alfred-workflow/pulls).
+
+
+## Acknowledgements
+- [ualfred](https://github.com/ischaojie/ualfred) + [Alfred Workflow](https://github.com/deanishe/alfred-workflow) - The python3 library fork and the Alfred workflow library used to build this workflow.
+- [parsedatetime](https://github.com/bear/parsedatetime/) - Used to parse natural language dates and times.
 
 ## License
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details
-
-## Acknowledgements
-- [ualfred](https://github.com/ischaojie/ualfred) - Used to build the alfred workflow in python3. Also thanks to the [original Alfred Workflow]()
-- [parsedatetime](https://github.com/bear/parsedatetime/) - Used to parse natural language dates and times.
 

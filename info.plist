@@ -1152,6 +1152,8 @@ open the task in TickTick.
 			<string>client_secret</string>
 		</dict>
 	</array>
+	<key>variablesdontexport</key>
+	<array/>
 	<key>version</key>
 	<string>0.1</string>
 	<key>webaddress</key>

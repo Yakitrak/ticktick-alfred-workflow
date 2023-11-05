@@ -4,10 +4,11 @@ from utils.constants import TICKTICK_API_URL
 import requests
 import asyncio
 
+session = requests.Session()
 async def get_tasks_from_list(token, list_id):
     headers = {"Authorization": "Bearer " + token}
     url = TICKTICK_API_URL + '/project/' + list_id + '/data'
-    resp = requests.get(url, headers=headers).json()
+    resp = session.get(url, headers=headers).json()
     tasks = []
     list_name = resp['project']['name']
     for task in resp['tasks']:
@@ -26,13 +27,13 @@ async def get_all_tasks(token):
     return tasks
 
 # previous script filter will output "list_id/tasks/task_id" as arg, but we need "list_id/tasks/task_id"
-def complete_task(token, arg):
+async def complete_task(token, arg):
     path = arg.replace('tasks', 'task')
     headers = {"Authorization": "Bearer " + token}
     url = TICKTICK_API_URL + '/project/' + path + '/complete'
     return requests.post(url, headers=headers)
 
-def create_task(token, task_name, due_date=None):
+async def create_task(token, task_name, due_date=None):
     headers = {"Authorization": "Bearer " + token}
     url = TICKTICK_API_URL + '/task'
     data = {
