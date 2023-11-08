@@ -117,7 +117,7 @@ Open the calendar in TickTick, in the month view.
 As the TickTick API is quite new, I'm hoping these limitations will be fixed in the future.
 
 ## Contributing
-If you have any issues or feature requests, please open an [issue](https://github.com/yakitrak/ticktick-alfred-workflow/issues/new) or a [pull request](https://github.com/Yakitrak/ticktick-alfred-workflow/pulls).
+If you have any issues or feature requests, please open an [issue](https://github.com/yakitrak/ticktick-alfred-workflow/issues/new/choose) or a [pull request](https://github.com/Yakitrak/ticktick-alfred-workflow/pulls).
 
 ## Acknowledgements
 - [TickTick API](https://developer.ticktick.com/api#/openapi) - The TickTick API used to build this workflow.
