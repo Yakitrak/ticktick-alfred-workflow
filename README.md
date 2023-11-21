@@ -28,7 +28,9 @@ This workflow allows you to search, open, add, and complete tasks in [TickTick](
 ## Installation
 Click [here](https://github.com/yakitrak/ticktick-alfred-workflow/releases/latest) to download the latest version of the workflow. 
 Or you can build it yourself by cloning this repo into your Alfred workflows directory. To run this workflow,
-you will need to have the [Alfred Powerpack](https://www.alfredapp.com/powerpack/)  and python3 installed.
+you will need to have the [Alfred Powerpack](https://www.alfredapp.com/powerpack/)  and python3 installed. 
+
+Libraries such as python3 and parsedatetime are included in the workflow, so you don't need to install them yourself.
 
 Please note, this workflow is not an official TickTick product and is not affiliated with TickTick in any way. 
 

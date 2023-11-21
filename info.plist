@@ -1135,10 +1135,8 @@ For detailed usage instructions please go to: https://github.com/Yakitrak/tickti
 			<string>client_secret</string>
 		</dict>
 	</array>
-	<key>variablesdontexport</key>
-	<array/>
 	<key>version</key>
-	<string>v1.0.0</string>
+	<string>v1.0.1</string>
 	<key>webaddress</key>
 	<string>https://github.com/Yakitrak/ticktick-alfred-integration</string>
 </dict>
