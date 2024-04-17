@@ -897,14 +897,14 @@
 	</array>
 	<key>readme</key>
 	<string>## Setup
-1. Go to [https://developer.ticktick.com/manage](https://developer.ticktick.com/manage) and create a new app with any name you want. You'll be asked for a redirect url, pleae enter in `http://localhost`. Now you should have a "Client ID" and "Client Secret".
-2. Go to "Configure Workflow" button on this workflow on Alfred, and copy and paste the "Client ID" and "Client Secret"
-3. Using Alfred, type in `tsetup1` and authorise the workflow, you'll be redirected to 
-`http://localhost?code=xxxxx`. Please copy the code from the url.
-4. Using Alred, type in `tsetup2` followed by the code from the step 1 (e.g. `tsetup2 xxxxx`). You are now ready to use the workflow!
-
-## Usage
-For detailed usage instructions please go to: https://github.com/Yakitrak/ticktick-alfred-workflow</string>
+1. Go to [https://developer.ticktick.com/manage](https://developer.ticktick.com/manage) and
+   create a new app with any name you want. You'll be asked for a redirect url, please enter in `http://localhost`.
+2. Now you should have a "Client ID" and "Client Secret". Copy these values.
+3. Here it also asks for "OAuth redirect URL", please enter `http://localhost` and save.
+4. Go to "Configure Workflow" button on this workflow on Alfred, paste the "Client ID" and "Client Secret"
+5. Using Alfred, type in `tsetup1` and authorise the workflow, you'll be redirected to
+   `http://localhost?code=xxxxx`. Please copy the code from the url.
+6. Using Alred, type in `tsetup2` followed by the code from the step 1 (e.g. `tsetup2 xxxxx`). You are now ready to use the workflow!</string>
 	<key>uidata</key>
 	<dict>
 		<key>07134673-1DD7-427E-B638-993B2D882394</key>
