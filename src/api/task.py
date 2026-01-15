@@ -44,6 +44,23 @@ async def create_task(token, task_name, due_date=None):
         if due_date.endswith('T00:00:00+0000'):
             data['isAllDay'] = True
 
-    # print(data)
+    return requests.post(url, headers=headers, json=data)
+
+
+async def create_task_full(token, task_data: dict):
+    """Create task with full data including repeatFlag.
+
+    Args:
+        token: TickTick access token
+        task_data: Dict with fields:
+            - title (required)
+            - dueDate (optional): ISO 8601 format
+            - isAllDay (optional): boolean
+            - repeatFlag (optional): RRULE format
+            - priority (optional): 0-5
+    """
+    headers = {"Authorization": "Bearer " + token}
+    url = TICKTICK_API_URL + '/task'
+    data = {k: v for k, v in task_data.items() if v is not None}
     return requests.post(url, headers=headers, json=data)
 

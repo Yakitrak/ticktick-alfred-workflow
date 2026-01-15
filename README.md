@@ -10,6 +10,7 @@ This workflow allows you to search, open, add, and complete tasks in [TickTick](
 
 - [Installation](#installation)
 - [Setup](#setup)
+  - [OpenAI Smart Parsing (Optional)](#openai-smart-parsing-optional)
 - [Usage](#usage)
   - [Lists](#lists)
     - [List Search](#list-search-tls-query)
@@ -48,6 +49,24 @@ Please note, this workflow is not an official TickTick product and is not affili
 5. Using Alfred, type in `tsetup1` and authorise the workflow, you'll be redirected to
    `http://localhost?code=xxxxx`. Please copy the code from the url.
 6. Using Alred, type in `tsetup2` followed by the code from the step 1 (e.g. `tsetup2 xxxxx`). You are now ready to use the workflow!
+
+### OpenAI Smart Parsing (Optional)
+
+Enable AI-powered natural language parsing for task creation:
+
+1. Get an API key from [OpenAI Platform](https://platform.openai.com/api-keys)
+2. Go to "Configure Workflow" in Alfred and paste your API key in the "OpenAI API Key" field
+
+With OpenAI enabled, you can create tasks using natural language:
+- `ttn buy milk tomorrow at 5pm` → Creates "Buy milk" with due date
+- `ttn run every wednesday at noon` → Creates "Run" with weekly recurrence
+- `ttn call mom urgent` → Creates "Call mom" with high priority
+
+The AI extracts:
+- **Task title** from conversational input
+- **Due date/time** from natural language ("tomorrow", "next monday", "in 2 hours")
+- **Repeat patterns** converted to RRULE format ("every day", "weekly on fridays")
+- **Priority** from keywords ("urgent", "important", "ASAP")
 
 ## Usage
 
@@ -94,12 +113,21 @@ Create a new task in TickTick with the given name.
 
 <img src="/docs/create_task.png" width="500"   alt="Create Task" />
 
-You can add an optional comma at the end and include a due date using natural language:
+**Basic mode** (without OpenAI): Add an optional comma and include a due date:
 
 - `ttn Do laundry`
 - `ttn Do the laundry, tomorrow at 5pm`
 - `ttn Do the laundry, next week`
 - `ttn Do the laundry, monday`
+
+**Smart mode** (with OpenAI): Just type naturally without commas:
+
+- `ttn buy groceries tomorrow evening` → "Buy groceries" due tomorrow at 6pm
+- `ttn meeting with John next monday at 10am` → "Meeting with John" due Monday 10:00
+- `ttn take vitamins every morning` → "Take vitamins" repeating daily at 9am
+- `ttn urgent fix the bug` → "Fix the bug" with high priority
+
+See [OpenAI Smart Parsing](#openai-smart-parsing-optional) for setup instructions.
 
 As mentioned in the [Current Limitations](#current-limitations) section, you can only add tasks to the Inbox list at the moment.
 
@@ -148,6 +176,7 @@ If you have any issues or feature requests, please open an [issue](https://githu
 - [TickTick API](https://developer.ticktick.com/api#/openapi) - The TickTick API used to build this workflow.
 - [ualfred](https://github.com/ischaojie/ualfred) & [Alfred Workflow](https://github.com/deanishe/alfred-workflow) - The python3 library fork and the Alfred workflow library used to build this workflow.
 - [parsedatetime](https://github.com/bear/parsedatetime/) - Used to parse natural language dates and times for creating tasks.
+- [OpenAI API](https://platform.openai.com/) - Powers the smart natural language task parsing feature.
 
 ## License
 
